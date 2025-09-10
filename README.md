@@ -1,48 +1,44 @@
-# Abdullah ÖzToprak | Portfolio Website
+# Hey there! 👋
 
-This is a simple portfolio website built with Node.js and Express, featuring a contact form and modern design. The project is ready for Playwright testing and can be easily customized.
+Welcome to my portfolio website! This project is a simple, modern, and personal space where I share my work, experience, and a bit about myself. It's built with Node.js and Express, and I use Playwright to make sure everything works smoothly.
 
-## Features
-- Responsive and clean design
-- Contact form with AJAX submission
-- Node.js Express server
-- Easy to extend and test
+## What’s inside?
+- Clean and responsive design
+- Contact form (feel free to say hi!)
+- Node.js Express backend
+- Automated Playwright tests
 
-## Getting Started
+## How to run it?
 
 ### Prerequisites
-- Node.js (v16 or higher recommended)
+- Node.js (v16 or newer)
 - npm
 
-### Installation
-1. Clone the repository:
+### Quick start
+1. Clone this repo:
    ```sh
    git clone https://github.com/AbdullahOztoprak/My-Portfolio-Website.git
    cd My-Portfolio-Website
    ```
-2. Install dependencies:
+2. Install the dependencies:
    ```sh
    npm install
    ```
 
-### Running the Server
+### Start the website
 ```sh
 node index.js
 ```
-The website will be available at [http://localhost:3000](http://localhost:3000).
+Then open your browser and go to [http://localhost:3000](http://localhost:3000) to see it live!
 
-### Testing with Playwright
-1. Install Playwright:
-   ```sh
-   npm install --save-dev playwright
-   ```
-2. Add your tests in the `tests/` directory.
-3. Run tests:
+### Run the tests
+1. Make sure the server is running (`node index.js`).
+2. In a new terminal, run:
    ```sh
    npx playwright test
    ```
 
-## Project Structure
+## Project structure
 ```
 public/
   index.html
@@ -51,10 +47,14 @@ public/
 index.js
 package.json
 README.md
+tests/
+  portfolio.spec.js
 ```
 
-## Contact
-For any questions or feedback, feel free to use the contact form on the website.
+## Want to reach out?
+You can always use the contact form on the site, or just drop me a message if you have feedback, questions, or just want to connect!
 
 ---
+Thanks for visiting! 😊
+
 © 2025 Abdullah ÖzToprak
