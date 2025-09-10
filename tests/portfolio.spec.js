@@ -15,4 +15,11 @@ test.describe('Portfolio Website', () => {
     await page.click('button[type="submit"]');
     await expect(page.locator('#formResult')).toContainText('Thank you for your message');
   });
+  
+  test('Footer is visible on the homepage', async ({ page }) => {
+    await page.goto('http://localhost:3000');
+    const footer = page.locator('footer');
+    await expect(footer).toBeVisible();
+    await expect(footer).toContainText('Abdullah ÖzToprak');
+  });
 });
