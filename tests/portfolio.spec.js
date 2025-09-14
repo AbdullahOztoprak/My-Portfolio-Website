@@ -22,4 +22,25 @@ test.describe('Portfolio Website', () => {
     await expect(footer).toBeVisible();
     await expect(footer).toContainText('Abdullah ÖzToprak');
   });
+  
+  test('Navigation links scroll to correct section', async ({ page }) => {
+    await page.goto('http://localhost:3000');
+    await page.click('nav a[href="#projects"]');
+    await expect(page.locator('h2', { hasText: 'Projects' })).toBeVisible();
+    await page.click('nav a[href="#education"]');
+    await expect(page.locator('h2', { hasText: 'Education' })).toBeVisible();
+  });
+
+  test('Contact form shows error on empty submit', async ({ page }) => {
+    await page.goto('http://localhost:3000');
+    await page.click('button[type="submit"]');
+    await expect(page.locator('#formResult')).toContainText('Please fill in all fields');
+  });
+
+  test('Project section is visible and lists projects', async ({ page }) => {
+    await page.goto('http://localhost:3000');
+    const projectsSection = page.locator('section#projects');
+    await expect(projectsSection).toBeVisible();
+    await expect(projectsSection.locator('li')).toHaveCountGreaterThan(0);
+  });
 });
