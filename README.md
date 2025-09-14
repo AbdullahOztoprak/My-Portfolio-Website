@@ -1,44 +1,45 @@
-# Hey there! 👋
+# 👋 Welcome!
 
-Welcome to my portfolio website! This project is a simple, modern, and personal space where I share my work, experience, and a bit about myself. It's built with Node.js and Express, and I use Playwright to make sure everything works smoothly.
+Hi, I’m Abdullah ÖzToprak. This is my personal portfolio website—a place where I showcase my projects, experience, and passion for software development and test automation.
 
-## What’s inside?
-- Clean and responsive design
-- Contact form (feel free to say hi!)
-- Node.js Express backend
-- Automated Playwright tests
+## 🚀 Features
+- **Modern, responsive design** – Looks great on any device
+- **Smooth navigation** – Animated scroll, active menu highlights, and a scroll progress bar
+- **Contact form** – Send me a message directly from the site (with validation and feedback)
+- **Node.js Express backend** – Fast and simple server
+- **Automated Playwright tests** – Ensures everything works as expected
 
-## How to run it?
+## 🛠️ Getting Started
 
 ### Prerequisites
 - Node.js (v16 or newer)
 - npm
 
-### Quick start
+### Quick Start
 1. Clone this repo:
    ```sh
    git clone https://github.com/AbdullahOztoprak/My-Portfolio-Website.git
    cd My-Portfolio-Website
    ```
-2. Install the dependencies:
+2. Install dependencies:
    ```sh
    npm install
    ```
 
-### Start the website
+### Start the Website
 ```sh
 node index.js
 ```
-Then open your browser and go to [http://localhost:3000](http://localhost:3000) to see it live!
+Open your browser and visit [http://localhost:3000](http://localhost:3000)
 
-### Run the tests
+### Run the Tests
 1. Make sure the server is running (`node index.js`).
 2. In a new terminal, run:
    ```sh
    npx playwright test
    ```
 
-## Project structure
+## 🗂️ Project Structure
 ```
 public/
   index.html
@@ -51,10 +52,15 @@ tests/
   portfolio.spec.js
 ```
 
-## Want to reach out?
-You can always use the contact form on the site, or just drop me a message if you have feedback, questions, or just want to connect!
+## 💡 Tips
+- You can easily add your own projects and experiences by editing `index.html`.
+- The frontend script (`public/script.js`) is modular and easy to extend.
+- All tests are in `tests/portfolio.spec.js`—add more to keep your site robust!
+
+## 📬 Contact
+Have feedback, questions, or just want to say hi? Use the contact form on the site or reach out via GitHub.
 
 ---
-Thanks for visiting! 😊
+Thanks for stopping by! If you like this project, feel free to star it or fork for your own use. 😊
 
 © 2025 Abdullah ÖzToprak
