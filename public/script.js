@@ -1,3 +1,9 @@
+// Autofocus the name field on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const nameInput = document.querySelector('#contactForm input[name="name"]');
+  if (nameInput) nameInput.focus();
+});
+
 
 
 // Smooth scroll for navigation links & active nav highlight
@@ -71,6 +77,7 @@ if (contactForm) {
     form.email.style.borderColor = '';
     form.message.style.borderColor = '';
 
+
     // Validation
     let hasError = false;
     if (!name) {
@@ -88,6 +95,7 @@ if (contactForm) {
     if (hasError) {
       resultDiv.textContent = 'Please fill in all fields correctly.';
       resultDiv.style.color = 'red';
+      setTimeout(() => { resultDiv.textContent = ''; }, 3000);
       return;
     }
 
@@ -101,12 +109,14 @@ if (contactForm) {
         body: JSON.stringify({ name, email, message })
       });
       const result = await res.text();
-      resultDiv.textContent = result;
-      resultDiv.style.color = 'green';
-      form.reset();
+  resultDiv.textContent = result;
+  resultDiv.style.color = 'green';
+  form.reset();
+  setTimeout(() => { resultDiv.textContent = ''; }, 3000);
     } catch (err) {
-      resultDiv.textContent = 'Something went wrong. Please try again later.';
-      resultDiv.style.color = 'red';
+  resultDiv.textContent = 'Something went wrong. Please try again later.';
+  resultDiv.style.color = 'red';
+  setTimeout(() => { resultDiv.textContent = ''; }, 3000);
     }
   });
 }
