@@ -1,3 +1,30 @@
+// Instant validation for contact form fields
+const contactFormEl = document.getElementById('contactForm');
+if (contactFormEl) {
+  const nameInput = contactFormEl.name;
+  const emailInput = contactFormEl.email;
+  const messageInput = contactFormEl.message;
+  const resultDiv = document.getElementById('formResult');
+
+  nameInput.addEventListener('input', () => {
+    if (nameInput.value.trim()) {
+      nameInput.style.borderColor = '';
+      resultDiv.textContent = '';
+    }
+  });
+  emailInput.addEventListener('input', () => {
+    if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailInput.value.trim())) {
+      emailInput.style.borderColor = '';
+      resultDiv.textContent = '';
+    }
+  });
+  messageInput.addEventListener('input', () => {
+    if (messageInput.value.trim()) {
+      messageInput.style.borderColor = '';
+      resultDiv.textContent = '';
+    }
+  });
+}
 // Autofocus the name field on page load
 window.addEventListener('DOMContentLoaded', () => {
   const nameInput = document.querySelector('#contactForm input[name="name"]');
@@ -99,6 +126,10 @@ if (contactForm) {
       return;
     }
 
+    // Disable submit button during submission
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
     // Show loading spinner
     resultDiv.innerHTML = '<span style="color:#222">Sending <span class="loader"></span></span>';
 
@@ -113,10 +144,12 @@ if (contactForm) {
   resultDiv.style.color = 'green';
   form.reset();
   setTimeout(() => { resultDiv.textContent = ''; }, 3000);
+  if (submitBtn) submitBtn.disabled = false;
     } catch (err) {
   resultDiv.textContent = 'Something went wrong. Please try again later.';
   resultDiv.style.color = 'red';
   setTimeout(() => { resultDiv.textContent = ''; }, 3000);
+  if (submitBtn) submitBtn.disabled = false;
     }
   });
 }
