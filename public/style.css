@@ -33,12 +33,52 @@
 	max-width: 500px;
 }
 
+
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
 	margin: 0;
 	padding: 0;
 	background: #111;
 	color: #111;
+	letter-spacing: 0.01em;
+}
+
+/* Subtle green code effect for headings */
+h1, h2, .hero-title, .hero-tagline {
+	font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+	color: #00ff99;
+	text-shadow: 0 1px 8px rgba(0,255,128,0.08);
+	letter-spacing: 0.03em;
+}
+
+.hero-title {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin: 0.5rem 0 0.2rem 0;
+	letter-spacing: 0.05em;
+}
+
+.hero-tagline {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin: 0.2rem 0 0.7rem 0;
+	color: #00ff99;
+	letter-spacing: 0.05em;
+}
+
+/* Keep main content readable */
+main, .about-bio, .about-list li, p, li, input, textarea, button {
+	font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+	color: #222;
+	letter-spacing: 0.01em;
+}
+
+/* Project manager/professional touch: underline section headings */
+section > h2 {
+	border-bottom: 2px solid #00ff99;
+	display: inline-block;
+	padding-bottom: 0.2em;
+	margin-bottom: 1em;
 }
 
 header {
