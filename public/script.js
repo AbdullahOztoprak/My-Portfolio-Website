@@ -1,3 +1,26 @@
+// Show only the selected section (Experience, Education, Projects) when nav button is clicked
+const sectionMap = [
+  { nav: 'a[href="#experience"]', section: 'experience' },
+  { nav: 'a[href="#education"]', section: 'education' },
+  { nav: 'a[href="#projects"]', section: 'projects' }
+];
+sectionMap.forEach(({ nav, section }) => {
+  const navEl = document.querySelector(nav);
+  const secEl = document.getElementById(section);
+  if (navEl && secEl) {
+    navEl.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Hide all
+      sectionMap.forEach(({ section: s }) => {
+        const el = document.getElementById(s);
+        if (el) el.style.display = 'none';
+      });
+      // Show selected
+      secEl.style.display = 'block';
+      secEl.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+});
 // Instant validation for contact form fields
 const contactFormEl = document.getElementById('contactForm');
 if (contactFormEl) {
