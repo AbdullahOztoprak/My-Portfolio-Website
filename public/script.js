@@ -1,8 +1,10 @@
-// Show only the selected section (Experience, Education, Projects) when nav button is clicked
+// Show only the selected section (Experience, Education, Projects, Technologies, Contact) when nav button is clicked
 const sectionMap = [
   { nav: 'a[href="#experience"]', section: 'experience' },
   { nav: 'a[href="#education"]', section: 'education' },
-  { nav: 'a[href="#projects"]', section: 'projects' }
+  { nav: 'a[href="#projects"]', section: 'projects' },
+  { nav: 'a[href="#technologies"]', section: 'technologies' },
+  { nav: 'a[href="#contact"]', section: 'contact' }
 ];
 sectionMap.forEach(({ nav, section }) => {
   const navEl = document.querySelector(nav);
