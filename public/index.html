@@ -16,11 +16,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdullah Öztoprak | Portfolio</title>
+  <title>Abdullah ÖzToprak | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .fade-section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+    .fade-section.visible { opacity: 1; transform: none; }
+    .about-row a, .about-github-cta a { outline: none; }
+    .about-row a:focus, .about-github-cta a:focus { box-shadow: 0 0 0 2px #00ff99; border-radius: 4px; }
+  </style>
 </head>
 <body>
   <header>
@@ -49,7 +55,7 @@
       </ul>
   </nav>
   <main>
-    <section id="about">
+    <section id="about" class="fade-section">
       <h2>About Me</h2>
       <div class="about-card">
         <div class="about-info">
@@ -72,28 +78,35 @@
         </div>
       </div>
     </section>
-    <section id="experience" style="display:none;">
+    <section id="experience" style="display:none;" class="fade-section">
       <h2>Experience</h2>
       <ul>
         <li>Software Test Intern - X Company (2025)</li>
         <li>Web Developer - Freelance (2024)</li>
       </ul>
     </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <form id="contactForm">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <div id="formResult"></div>
-      </section>
+    <section id="contact" class="fade-section">
+      <h2>Contact</h2>
+      <form id="contactForm" autocomplete="on">
+        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+        <input type="email" name="email" placeholder="Email" required aria-label="Email">
+        <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div id="formResult" aria-live="polite"></div>
+    </section>
   </main>
   <footer>
       <p>&copy; 2025 Abdullah ÖzToprak</p>
   </footer>
+  <script>
+    // Fade-in animation for sections
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.fade-section').forEach(function(sec) {
+        setTimeout(() => sec.classList.add('visible'), 200);
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
