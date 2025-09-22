@@ -24,6 +24,7 @@
 </head>
 <body>
   <header>
+    <button id="modeToggle" aria-label="Toggle dark/light mode" style="position:absolute;top:20px;right:20px;padding:8px 16px;border-radius:6px;border:none;background:#222;color:#fff;cursor:pointer;font-size:1rem;">🌙 Dark Mode</button>
     <section class="hero">
       <div class="hero-icon">
         <!-- Simple SVG combining code, gears, and a board for creativity -->
@@ -60,6 +61,7 @@
           <div class="about-row"><span class="about-icon">💻</span><a href="https://github.com/AbdullahOztoprak" target="_blank">AbdullahOztoprak</a></div>
           <div class="about-row"><span class="about-icon">🔗</span><a href="https://www.linkedin.com/in/abdullahoztoprak/" target="_blank">LinkedIn</a></div>
           <div class="about-row"><span class="about-icon">📄</span><a href="#" download>Download CV</a></div>
+  <div class="about-row"><span class="about-icon">📄</span><a href="cv.pdf" download>Download CV (PDF)</a></div>
         </div>
         <div class="about-bio">
           <p class="about-highlight">Computer Engineering student at <b>Turkish-German University</b> who gained practical experience in <b>cybersecurity</b> and <b>networking</b> from a Siemens internship. Strong foundation in <b>software development principles</b> and <b>system administration</b>. Experience in tutoring technical subjects and explaining complex concepts clearly. Open to exploring different fields and eager to learn new skills. Currently focused on expanding expertise in <b>AI technologies</b>, <b>network security</b> and <b>software engineering</b>.</p>
@@ -84,12 +86,38 @@
     <section id="projects" style="display:none;" class="fade-section">
       <h2>Projects</h2>
       <div class="projects-content">
-        <p>Visit my <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a> to see projects and practical work.</p>
+        <div class="project-cards">
+          <div class="project-card">
+            <h3>Test Automation System</h3>
+            <p>Automated UI and API testing framework using Playwright and Node.js. Includes reporting and CI integration.</p>
+            <a href="https://github.com/AbdullahOztoprak/test-automation-system" target="_blank">View on GitHub</a>
+          </div>
+          <div class="project-card">
+            <h3>Personal Blog Platform</h3>
+            <p>Full-stack blog platform with Markdown support, user authentication, and responsive design.</p>
+            <a href="https://github.com/AbdullahOztoprak/personal-blog-platform" target="_blank">View on GitHub</a>
+          </div>
+          <div class="project-card">
+            <h3>Interactive QA System</h3>
+            <p>Information retrieval system using RAG and large language models for efficient Q&A in enterprise environments.</p>
+            <a href="https://github.com/AbdullahOztoprak/interactive-qa-system" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+        <p>See more on <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>.</p>
       </div>
     </section>
     <section id="technologies" style="display:none;" class="fade-section">
       <h2>Technologies</h2>
       <div class="technologies-content">
+        <div class="skills-list">
+          <div class="skill-bar"><span>C++</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+          <div class="skill-bar"><span>Python</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+          <div class="skill-bar"><span>JavaScript</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+          <div class="skill-bar"><span>Docker</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+          <div class="skill-bar"><span>Git</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+          <div class="skill-bar"><span>Jenkins</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+          <div class="skill-bar"><span>Linux</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+        </div>
         <ul>
           <li><strong>Languages:</strong> C++, C, JavaScript, Objective-C, SQL, Python, Dart, HTML, CSS</li>
           <li><strong>Technologies:</strong> Docker, Jenkins, Git, Raspberry Pi, GitHub, VS Code, Jupyter Notebook, Postman, VMware</li>
