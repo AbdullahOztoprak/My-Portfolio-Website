@@ -70,6 +70,16 @@ document.querySelectorAll('nav a[href^="#"]').forEach(link => {
 });
 
 // Highlight nav link on scroll
+// Dark/Light mode toggle
+const modeToggle = document.getElementById('modeToggle');
+if (modeToggle) {
+  modeToggle.addEventListener('click', function() {
+    const dark = document.body.classList.toggle('dark-mode');
+    modeToggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    modeToggle.style.background = dark ? '#fff' : '#222';
+    modeToggle.style.color = dark ? '#222' : '#fff';
+  });
+}
 const sections = document.querySelectorAll('main section');
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 window.addEventListener('scroll', () => {

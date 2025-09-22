@@ -69,11 +69,96 @@
 	transition: color 0.2s;
 }
 .about-github-cta a:hover {
-	color: #111;
-	background: #00ff99;
-	border-radius: 4px;
-	padding: 0 0.2em;
-}
+	 color: #111;
+	 background: #00ff99;
+	 border-radius: 4px;
+	 padding: 0 0.2em;
+	}
+
+	/* Project Cards */
+	.project-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		margin-bottom: 1.5rem;
+	}
+	.project-card {
+		background: #fff;
+		border-radius: 10px;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+		padding: 1.2rem 1rem;
+		flex: 1 1 260px;
+		min-width: 220px;
+		max-width: 340px;
+		display: flex;
+		flex-direction: column;
+		gap: 0.7em;
+	}
+	.project-card h3 {
+		margin: 0 0 0.3em 0;
+		font-size: 1.15rem;
+	}
+	.project-card a {
+		color: #00ff99;
+		text-decoration: underline;
+		font-weight: 600;
+	}
+	.project-card a:hover {
+		color: #111;
+	}
+
+	/* Skills Progress Bar */
+	.skills-list {
+		margin-bottom: 1.5rem;
+	}
+	.skill-bar {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		margin-bottom: 0.7em;
+	}
+	.skill-bar span {
+		min-width: 90px;
+		font-weight: 600;
+		color: #222;
+	}
+	.bar {
+		flex: 1;
+		height: 12px;
+		background: #eee;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+	.fill {
+		height: 100%;
+		background: linear-gradient(90deg,#00ff99 60%,#00cfff 100%);
+		border-radius: 6px;
+	}
+
+	/* Dark Mode */
+	.dark-mode {
+		background: #181818 !important;
+		color: #f4f4f4 !important;
+	}
+	.dark-mode header,
+	.dark-mode .about-card,
+	.dark-mode .project-card,
+	.dark-mode .education-content,
+	.dark-mode .technologies-content,
+	.dark-mode .contact-content {
+		background: #222 !important;
+		color: #f4f4f4 !important;
+	}
+	.dark-mode nav ul li a {
+		color: #00ff99 !important;
+	}
+	.dark-mode .about-highlight {
+		background: #222 !important;
+		color: #00ff99 !important;
+	}
+	.dark-mode .bar {
+		background: #333 !important;
+	}
 /* Hero Section */
 .hero {
 	display: flex;
