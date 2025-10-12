@@ -1,3 +1,27 @@
+.white-mode .about-row,
+.white-mode .about-bio,
+.white-mode .about-bullets,
+.white-mode .about-list li,
+.white-mode .contact-content li,
+.white-mode .contact-content strong {
+	color: #fff !important;
+}
+.white-mode .about-highlight,
+.white-mode .contact-content a {
+	color: #00ff99 !important;
+}
+.dark-mode .about-row,
+.dark-mode .about-bio,
+.dark-mode .about-bullets,
+.dark-mode .about-list li,
+.dark-mode .contact-content li,
+.dark-mode .contact-content strong {
+	color: #111 !important;
+}
+.dark-mode .about-highlight,
+.dark-mode .contact-content a {
+	color: #00ff99 !important;
+}
 .about-card {
 	display: flex;
 	flex-wrap: wrap;
@@ -22,8 +46,35 @@
 	font-size: 1.08rem;
 	gap: 0.7em;
 	color: #222;
+	}
+	.white-mode .about-row,
+	.white-mode .about-bio,
+	.white-mode .about-bullets,
+	.white-mode .about-list li,
+	.white-mode .contact-content li,
+	.white-mode .contact-content strong,
+	.white-mode .contact-content a {
+		color: #111 !important;
+	}
+	.dark-mode .about-row,
+	.dark-mode .about-bio,
+	.dark-mode .about-bullets,
+	.dark-mode .about-list li,
+	.dark-mode .contact-content li,
+	.dark-mode .contact-content strong,
+	.dark-mode .contact-content a {
+		color: #f4f4f4 !important;
 }
 .about-icon {
+
+	.white-mode h1, .white-mode h2, .white-mode .hero-title, .white-mode section > h2 {
+	  color: #111 !important;
+	  border-bottom: 2px solid #00ff99 !important;
+	}
+	.white-mode p, .white-mode li, .white-mode .about-bio, .white-mode .about-list li, .white-mode main, .white-mode input, .white-mode textarea, .white-mode button {
+	  color: #111 !important;
+	}
+
 	font-size: 1.2em;
 	color: #00ff99;
 }
@@ -48,6 +99,13 @@
 	margin: 0.5em 0 0.5em 1em;
 	padding: 0;
 	color: #222;
+	.dark-mode h1, .dark-mode h2, .dark-mode .hero-title, .dark-mode section > h2 {
+	  color: #f4f4f4 !important;
+	  border-bottom: 2px solid #00ff99 !important;
+	}
+	.dark-mode p, .dark-mode li, .dark-mode .about-bio, .dark-mode .about-list li, .dark-mode main, .dark-mode input, .dark-mode textarea, .dark-mode button {
+	  color: #f4f4f4 !important;
+	}
 	font-size: 1.05rem;
 }
 .about-bullets li {
@@ -158,6 +216,30 @@
 	}
 	.dark-mode .bar {
 		background: #333 !important;
+	}
+	/* White Mode */
+	.white-mode {
+	  background: #fff !important;
+	  color: #111 !important;
+	}
+	.white-mode header,
+	.white-mode .about-card,
+	.white-mode .project-card,
+	.white-mode .education-content,
+	.white-mode .technologies-content,
+	.white-mode .contact-content {
+	  background: #fff !important;
+	  color: #111 !important;
+	}
+	.white-mode nav ul li a {
+	  color: #00ff99 !important;
+	}
+	.white-mode .about-highlight {
+	  background: #f4f4f4 !important;
+	  color: #00ff99 !important;
+	}
+	.white-mode .bar {
+	  background: #eee !important;
 	}
 /* Hero Section */
 .hero {

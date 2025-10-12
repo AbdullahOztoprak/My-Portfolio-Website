@@ -54,6 +54,27 @@ if (contactFormEl) {
 window.addEventListener('DOMContentLoaded', () => {
   const nameInput = document.querySelector('#contactForm input[name="name"]');
   if (nameInput) nameInput.focus();
+
+  // Tema değiştirme (dark/white)
+  const body = document.body;
+  let isDark = true;
+  const modeToggle = document.getElementById('modeToggle');
+  if (modeToggle) {
+    modeToggle.addEventListener('click', () => {
+      isDark = !isDark;
+      if (isDark) {
+        body.classList.remove('white-mode');
+        body.classList.add('dark-mode');
+        modeToggle.textContent = '🌙 Dark Mode';
+      } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('white-mode');
+        modeToggle.textContent = '☀️ White Mode';
+      }
+    });
+    // Sayfa ilk açıldığında siyah modda başlasın
+    body.classList.add('dark-mode');
+  }
 });
 
 
