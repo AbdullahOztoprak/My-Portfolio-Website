@@ -23,39 +23,18 @@
   </style>
 </head>
 <body>
-  <div class="main-bg">
   <header>
-    <div class="header-flex">
-      <h1 class="site-title">Abdullah ÖzToprak</h1>
-      <button id="modeToggle" aria-label="Toggle dark/light mode">🌙 Dark Mode</button>
-    </div>
+    <button id="modeToggle" aria-label="Toggle dark/light mode" style="position:absolute;top:20px;right:20px;padding:8px 16px;border-radius:6px;border:none;background:#222;color:#fff;cursor:pointer;font-size:1rem;">🌙 Dark Mode</button>
     <section class="hero">
       <div class="hero-icon">
         <!-- Simple SVG combining code, gears, and a board for creativity -->
-        <svg id="heroSVG" width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-          <rect id="svgRect1" x="10" y="10" width="60" height="40" rx="8" fill="#fff" stroke="#111" stroke-width="3"/>
-          <rect id="svgRect2" x="20" y="20" width="40" height="20" rx="4" fill="#eaeaea" stroke="#111" stroke-width="2"/>
-          <circle id="svgCircle" cx="65" cy="55" r="8" fill="#fff" stroke="#111" stroke-width="3"/>
-          <path id="svgPath" d="M65 47v16M57 55h16" stroke="#111" stroke-width="2"/>
-          <text id="svgText" x="40" y="35" text-anchor="middle" font-size="10" fill="#111" font-family="Arial">&lt;/&gt;</text>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="60" height="40" rx="8" fill="#fff" stroke="#111" stroke-width="3"/>
+          <rect x="20" y="20" width="40" height="20" rx="4" fill="#f4f4f4" stroke="#111" stroke-width="2"/>
+          <circle cx="65" cy="55" r="8" fill="#fff" stroke="#111" stroke-width="3"/>
+          <path d="M65 47v16M57 55h16" stroke="#111" stroke-width="2"/>
+          <text x="40" y="35" text-anchor="middle" font-size="10" fill="#111" font-family="Arial">&lt;/&gt;</text>
         </svg>
-        <script>
-        function updateSVGColors() {
-          const isDark = document.body.classList.contains('dark-mode');
-          document.getElementById('svgRect1').setAttribute('fill', isDark ? '#333' : '#fff');
-          document.getElementById('svgRect1').setAttribute('stroke', isDark ? '#fff' : '#111');
-          document.getElementById('svgRect2').setAttribute('fill', isDark ? '#333' : '#eaeaea');
-          document.getElementById('svgRect2').setAttribute('stroke', isDark ? '#fff' : '#111');
-          document.getElementById('svgCircle').setAttribute('fill', isDark ? '#333' : '#fff');
-          document.getElementById('svgCircle').setAttribute('stroke', isDark ? '#fff' : '#111');
-          document.getElementById('svgPath').setAttribute('stroke', isDark ? '#fff' : '#111');
-          document.getElementById('svgText').setAttribute('fill', isDark ? '#fff' : '#111');
-        }
-        document.addEventListener('DOMContentLoaded', updateSVGColors);
-        document.getElementById('modeToggle').addEventListener('click', function() {
-          setTimeout(updateSVGColors, 100);
-        });
-        </script>
       </div>
   <h1 class="hero-title">Abdullah ÖzTopra<span style="font-size:0.8em">k</span></h1>
       <p class="hero-tagline">Computer Engineer &nbsp;|&nbsp; Software Developer &nbsp;|&nbsp; Project Manager</p>
@@ -95,114 +74,62 @@
     <section id="education" style="display:none;" class="fade-section">
       <h2>Education</h2>
       <div class="education-content">
-        <h3>BS, Turkish-German University, Computer Engineering</h3>
-        <ul>
-          <li><strong>GPA:</strong> 3.5/4.0</li>
-          <li><strong>Coursework:</strong> Programming (Python, C/C++, Java), software development, machine learning, artificial intelligence, neural networks, data analysis.</li>
-          <li><strong>Projects:</strong> Linux environments, networking, AI/ML applications.</li>
-          <li><strong>Skills:</strong> Problem solving, research, innovative software engineering.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="projects" style="display:none;" class="fade-section">
-      <h2>Projects</h2>
-      <div class="projects-content">
-        <div class="project-cards">
-          <div class="project-card">
-            <h3>Test Automation System</h3>
-            <p>Automated UI and API testing framework using Playwright and Node.js. Includes reporting and CI integration.</p>
-            <a href="https://github.com/AbdullahOztoprak/test-automation-system" target="_blank">View on GitHub</a>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Abdullah ÖzToprak | Portfolio</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="style.css">
+        </head>
+        <body class="dark-mode">
+          <div class="main-bg">
+            <header class="main-header">
+              <div class="logo">AÖ</div>
+              <nav class="main-nav">
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#technologies">Technologies</a>
+                <a href="#contact">Contact</a>
+              </nav>
+              <div class="header-actions">
+                <button class="search-btn" aria-label="Search">
+                  <span class="search-icon">🔍</span>
+                </button>
+                <button class="menu-btn" aria-label="Menu"></button>
+              </div>
+            </header>
+            <main class="hero-section">
+              <div class="hero-content">
+                <div class="hero-title-block">
+                  <h1 class="hero-name">ABDULLAH<br>ÖZTOPRAK</h1>
+                  <p class="hero-desc">Computer Engineering student at Turkish-German University who gained practical experience in cybersecurity and networking from a Siemens internship.</p>
+                  <a href="https://www.linkedin.com/in/abdullahoztoprak/" target="_blank" class="linkedin-btn">Linkedin</a>
+                </div>
+                <div class="hero-profile-block">
+                  <img src="profile.jpg" alt="Profile" class="profile-photo">
+                  <div class="timeline">
+                    <span class="timeline-year">2003</span>
+                    <div class="timeline-line"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-email">abdullahoztprak@gmail.com</div>
+              <div class="certificates-gallery">
+                <div class="gallery-item"><span>Certificate</span></div>
+                <div class="gallery-item"><span>Certificate</span></div>
+                <div class="gallery-item"><span>Certificate</span></div>
+                <div class="gallery-item"><span>Certificate</span></div>
+                <div class="gallery-item"><span>Certificate</span></div>
+                <div class="gallery-item"><span>Certificate</span></div>
+              </div>
+            </main>
           </div>
-          <div class="project-card">
-            <h3>Personal Blog Platform</h3>
-            <p>Full-stack blog platform with Markdown support, user authentication, and responsive design.</p>
-            <a href="https://github.com/AbdullahOztoprak/personal-blog-platform" target="_blank">View on GitHub</a>
-          </div>
-          <div class="project-card">
-            <h3>Interactive QA System</h3>
-            <p>Information retrieval system using RAG and large language models for efficient Q&A in enterprise environments.</p>
-            <a href="https://github.com/AbdullahOztoprak/interactive-qa-system" target="_blank">View on GitHub</a>
-          </div>
-        </div>
-        <p>See more on <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>.</p>
-      </div>
-    </section>
-    <section id="technologies" style="display:none;" class="fade-section">
-      <h2>Technologies</h2>
-      <div class="technologies-content">
-        <div class="skills-list">
-          <div class="skill-bar"><span>C++</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-          <div class="skill-bar"><span>Python</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-          <div class="skill-bar"><span>JavaScript</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-          <div class="skill-bar"><span>Docker</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-          <div class="skill-bar"><span>Git</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-          <div class="skill-bar"><span>Jenkins</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
-          <div class="skill-bar"><span>Linux</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-        </div>
-        <ul>
-          <li><strong>Languages:</strong> C++, C, JavaScript, Objective-C, SQL, Python, Dart, HTML, CSS</li>
-          <li><strong>Technologies:</strong> Docker, Jenkins, Git, Raspberry Pi, GitHub, VS Code, Jupyter Notebook, Postman, VMware</li>
-        </ul>
-      </div>
-    </section>
-    <section id="experience" style="display:none;" class="fade-section">
-      <h2>Experience</h2>
-      <div class="experience-content">
-        <h3>Insider, AI and Software Development Intern <span class="exp-date">07/09/2021–Current</span></h3>
-        <ul>
-          <li>Developed backend services in Go, contributing to API design and implementation that improved system functionality.</li>
-          <li>Engaged in AI projects leveraging large language models (LLMs) and data-driven approaches to enhance solution accuracy.</li>
-          <li>Applied programming, data handling, and AI concepts to real-world projects, translating theory into practical outcomes.</li>
+        </body>
+        </html>
           <li>Collaborated with team members on software development tasks, strengthening problem-solving skills and delivering effective project results.</li>
-        </ul>
-        <h3>Siemens, Cyber Security Intern <span class="exp-date">04/08/2025–29/08/2025</span></h3>
-        <ul>
-          <li>Administered Linux systems and performed essential system administration tasks, ensuring stable and efficient operations.</li>
-          <li>Gained hands-on experience in network security by applying monitoring tools and system hardening techniques.</li>
-          <li>Assisted in building Jenkins pipelines and automating workflows, reducing manual effort and improving reliability.</li>
-          <li>Setup and maintained test environments using Docker containers, virtual machines and Raspberry Pi devices.</li>
-          <li>Developed an interactive QA system leveraging RAG and large language models (LLMs), enhancing information retrieval efficiency.</li>
-        </ul>
-        <h3>Turkish-German University, Computer Engineering Tutor <span class="exp-date">01/07/2025–29/07/2025</span></h3>
-        <ul>
-          <li>Delivered one-on-one tutoring in algorithms, coding, and digital design to 50+ students, simplifying complex concepts for improved understanding.</li>
-          <li>Organized interactive problem-solving sessions and study groups, boosting student confidence and enhancing technical performance.</li>
-          <li>Supported peers in strengthening their computer engineering skills, resulting in higher grades and successful project outcomes.</li>
-        </ul>
-        <h3>İŞKUR Youth Program, Part-time Trainee <span class="exp-date">Oct 2023–Apr 2024</span></h3>
-        <ul>
-          <li>Supported the Bologna process at Turkish-German University, ensuring accurate documentation and process alignment.</li>
-          <li>Maintained and documented course information using MS Excel, applying practical organizational and data management skills.</li>
-          <li>Coordinated directly with faculty members to facilitate effective communication and workflow.</li>
-          <li>Completed occupational health and safety training.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="contact" class="fade-section">
-      <h2>Contact</h2>
-      <div class="contact-content">
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:38abdullahbaba@gmail.com">38abdullahbaba@gmail.com</a></li>
-          <li><strong>Phone:</strong> <a href="tel:+905060635206">0506 0635206</a></li>
-          <li><strong>Location:</strong> Istanbul, Türkiye</li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abdullahoztoprak/" target="_blank" rel="noopener" aria-label="LinkedIn">abdullahoztoprak</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener" aria-label="GitHub">AbdullahOztoprak</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-  </div>
-  <footer>
-      <p>&copy; 2025 Abdullah Öztoprak</p>
-  </footer>
-  <script>
-    // Fade-in animation for sections
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.fade-section').forEach(function(sec) {
-        setTimeout(() => sec.classList.add('visible'), 200);
-      });
-    });
-  </script>
-  <script src="script.js"></script>
-</body>
-</html>
