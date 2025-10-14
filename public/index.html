@@ -8,13 +8,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah ÖzToprak | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header class="main-header">
-      <div class="logo">AÖ</div>
-      <nav class="main-nav">
+      <div class="logo" aria-label="Abdullah ÖzToprak Logo">AÖ</div>
+      <nav class="main-nav" aria-label="Main Navigation">
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -23,33 +23,41 @@
       </nav>
       <div class="header-actions">
         <button class="search-btn" aria-label="Search">🔍</button>
-        <button class="menu-btn" aria-label="Menu"></button>
+        <button class="menu-btn" aria-label="Menu" tabindex="0">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </header>
     <main class="hero-section">
-      <div class="hero-content">
+      <section class="hero-content">
         <div class="hero-title-block">
           <h1 class="hero-name">ABDULLAH<br>ÖZTOPRAK</h1>
-          <p class="hero-desc">Computer Engineering student at Turkish-German University who gained practical experience in cybersecurity and networking from a Siemens internship.</p>
-          <a href="https://www.linkedin.com/in/abdullahoztoprak/" target="_blank" class="linkedin-btn">Linkedin</a>
+          <p class="hero-desc">
+            Computer Engineering student at Turkish-German University who gained practical experience in cybersecurity and networking from a Siemens internship.
+          </p>
+          <a href="https://www.linkedin.com/in/abdullahoztoprak/" target="_blank" rel="noopener" class="linkedin-btn" aria-label="Linkedin Profile">Linkedin</a>
         </div>
         <div class="hero-profile-block">
-          <img src="profile.jpg" alt="Profile" class="profile-photo">
-          <div class="timeline">
+          <img src="profile.jpg" alt="Profile photo of Abdullah ÖzToprak" class="profile-photo">
+          <div class="timeline" aria-label="Birth Year">
             <span class="timeline-year">2003</span>
             <div class="timeline-line"></div>
           </div>
         </div>
+      </section>
+      <div class="hero-email">
+        <a href="mailto:abdullahoztprak@gmail.com">abdullahoztprak@gmail.com</a>
       </div>
-      <div class="hero-email">abdullahoztprak@gmail.com</div>
-      <div class="certificates-gallery">
+      <section class="certificates-gallery" aria-label="Certificates Gallery">
         <div class="gallery-item"><span>Certificate</span></div>
         <div class="gallery-item"><span>Certificate</span></div>
         <div class="gallery-item"><span>Certificate</span></div>
         <div class="gallery-item"><span>Certificate</span></div>
         <div class="gallery-item"><span>Certificate</span></div>
         <div class="gallery-item"><span>Certificate</span></div>
-      </div>
+      </section>
     </main>
   </body>
   </html>
