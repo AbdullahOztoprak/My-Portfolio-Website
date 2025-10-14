@@ -7,21 +7,35 @@ body {
 }
 
 .main-header {
-	/* Certificates Section - Centered Modern Slider */
-	/* Certificates Section - Centered Modern Slider with Large Arrows */
-	/* Certificates Section - Centered, Fixed Width, Modern Slider */
-	/* Certificates Section - Screenshot Proportions */
-	.certificates-section {
-		width: 100%;
-		max-width: 1200px;
-		margin: 48px auto 0 auto;
-		background: #181818;
-		border-radius: 0 0 40px 40px;
-		box-shadow: 0 4px 32px rgba(0,0,0,0.12);
-		padding: 0 0 32px 0;
+	background: transparent;
+	color: #fff;
+	border: 3px solid #fff;
+	border-radius: 999px;
+	font-size: 1.35rem;
+	font-weight: 700;
+	padding: 12px 48px;
+	text-decoration: none;
+	letter-spacing: 1px;
+	box-shadow: none;
+	transition: background 0.2s, color 0.2s, border 0.2s;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 12px 44px;
+	text-decoration: none;
+	letter-spacing: 1px;
+	box-shadow: none;
+	transition: background 0.2s, color 0.2s, border 0.2s;
+	position: relative;
+	display: inline-block;
+	text-align: center;
 		box-sizing: border-box;
 		position: relative;
-		transition: max-height 0.4s cubic-bezier(.22,.68,.54,1.01), opacity 0.3s;
+	background: #fff;
+	color: #181818;
+	border: 3px solid #fff;
 		overflow: hidden;
 	}
 	.certificates-section.hide {
@@ -185,28 +199,27 @@ body {
 		}
 	}
 
-	@media (max-width: 900px) {
-			border-radius: 0 0 18px 18px;
-			padding-bottom: 36px;
-		}
-		.certificates-title {
-			font-size: 1.3rem;
-			margin: 0 18px 18px 0;
-		}
-		.certificates-gallery {
-			gap: 18px;
-		}
-		.gallery-item {
-			min-width: 180px;
-			height: 110px;
-			font-size: 1rem;
-		}
-		.gallery-arrow {
-			font-size: 2rem;
-			width: 40px;
-			height: 90px;
-		}
+@media (max-width: 900px) {
+	.gallery-item {
+		border-radius: 0 0 18px 18px;
+		padding-bottom: 36px;
+		min-width: 180px;
+		height: 110px;
+		font-size: 1rem;
 	}
+	.certificates-title {
+		font-size: 1.3rem;
+		margin: 0 18px 18px 0;
+	}
+	.certificates-gallery {
+		gap: 18px;
+	}
+	.gallery-arrow {
+		font-size: 2rem;
+		width: 40px;
+		height: 90px;
+	}
+}
 .menu-btn:hover .bar {
 	background: #000AFF;
 }
@@ -527,22 +540,22 @@ body {
 		position: relative;
 	}
 .main-nav a:hover {
-		background: #fff;
-		color: #181818;
-		border: 3px solid #fff;
-}
-.content-section {
-	display: flex;
-	justify-content: center;
+	background: transparent;
+	color: #fff;
+	border: 3px solid #fff;
+	border-radius: 32px;
+	font-size: 1.35rem;
+	font-weight: 700;
+	padding: 12px 44px;
+	text-decoration: none;
+	letter-spacing: 1px;
+	box-shadow: none;
+	transition: background 0.2s, color 0.2s, border 0.2s;
+	position: relative;
+	display: inline-flex;
 	align-items: center;
-	width: 100%;
-	margin-bottom: 32px;
-}
-.content-card {
-	width: 600px;
-	min-height: 320px;
-	background: #fff;
-	border-radius: 24px;
+	justify-content: center;
+	text-align: center;
 	box-shadow: 0 2px 16px rgba(0,0,0,0.10);
 	margin: 0 auto;
 }
