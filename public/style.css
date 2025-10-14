@@ -7,7 +7,6 @@ body {
 }
 
 .main-header {
-	/* Certificates Section - Full Width Slider */
 	/* Certificates Section - Centered Modern Slider */
 	/* Certificates Section - Centered Modern Slider with Large Arrows */
 	/* Certificates Section - Centered, Fixed Width, Modern Slider */
@@ -187,7 +186,6 @@ body {
 	}
 
 	@media (max-width: 900px) {
-		.certificates-section {
 			border-radius: 0 0 18px 18px;
 			padding-bottom: 36px;
 		}
@@ -209,10 +207,6 @@ body {
 			height: 90px;
 		}
 	}
-	background: #fff;
-	border-radius: 2px;
-	transition: background 0.2s;
-}
 .menu-btn:hover .bar {
 	background: #000AFF;
 }
@@ -518,7 +512,6 @@ body {
 			margin: 0 auto 32px auto;
 			width: 100%;
 		}
-}
 .main-nav a {
 		background: transparent;
 		color: #fff;
@@ -533,7 +526,6 @@ body {
 		transition: background 0.2s, color 0.2s, border 0.2s;
 		position: relative;
 	}
-}
 .main-nav a:hover {
 		background: #fff;
 		color: #181818;
