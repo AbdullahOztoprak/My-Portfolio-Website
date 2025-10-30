@@ -518,47 +518,41 @@ body {
 	margin-bottom: 18px;
 	text-align: center;
 }
-.main-nav {
-			display: flex;
-			justify-content: center;
-			gap: 40px;
-			margin: 0 auto 32px auto;
-			width: 100%;
-		}
-.main-nav a {
+	.main-nav {
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		margin: 0 auto 32px auto;
+		width: 100%;
+	}
+	/* Clean and consistent nav buttons */
+	.main-nav a {
 		background: transparent;
 		color: #fff;
 		border: 3px solid #fff;
 		border-radius: 32px;
 		font-size: 1.35rem;
 		font-weight: 700;
-		padding: 12px 44px;
+		padding: 10px 36px;
 		text-decoration: none;
 		letter-spacing: 1px;
 		box-shadow: none;
-		transition: background 0.2s, color 0.2s, border 0.2s;
+		transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		/* ensure border respects radius and avoids clipping */
+		background-clip: padding-box;
 	}
-.main-nav a:hover {
-	background: transparent;
-	color: #fff;
-	border: 3px solid #fff;
-	border-radius: 32px;
-	font-size: 1.35rem;
-	font-weight: 700;
-	padding: 12px 44px;
-	text-decoration: none;
-	letter-spacing: 1px;
-	box-shadow: none;
-	transition: background 0.2s, color 0.2s, border 0.2s;
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-	margin: 0 auto;
-}
+
+	.main-nav a:hover {
+		background: #fff;
+		color: #181818;
+		transform: translateY(-3px);
+		box-shadow: 0 8px 26px rgba(0,0,0,0.22);
+		border-color: #fff;
+	}
 .certificates-section {
 	width: 100%;
 	max-width: 1000px;
