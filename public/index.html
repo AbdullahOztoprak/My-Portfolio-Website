@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abdullah ÖzToprak — Software Developer & Test Automation Engineer. Portfolio showcasing projects, skills, and experience." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>Abdullah ÖzToprak | Software Developer</title>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Skip to content for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ─── Header / Navigation ───────────────────────────── -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner">
+      <a href="#hero" class="header__logo" aria-label="Go to top">
+        <span class="header__logo-icon" aria-hidden="true">&lt;/&gt;</span>
+        <span class="header__logo-text">AÖ</span>
+      </a>
+
+      <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="header__cta">Let's Talk</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ─── Hero Section ──────────────────────────────────── -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="hero__content">
+        <div class="hero__text">
+          <p class="hero__greeting reveal">Hello, I'm</p>
+          <h1 class="hero__name reveal">Abdullah <span class="text-gradient">ÖzToprak</span></h1>
+          <p class="hero__title reveal">Software Developer &amp; Test Automation Engineer</p>
+          <p class="hero__description reveal">
+            I build robust, scalable software and ensure quality through comprehensive test automation.
+            Passionate about clean code, modern architecture, and delivering exceptional user experiences.
+          </p>
+          <div class="hero__actions reveal">
+            <a href="#contact" class="btn btn--primary">Get In Touch</a>
+            <a href="#projects" class="btn btn--outline">View Projects</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal">
+          <div class="hero__avatar">
+            <div class="hero__avatar-ring"></div>
+            <div class="hero__avatar-placeholder" aria-hidden="true">AÖ</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span class="hero__scroll-text">Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ─── About Section ─────────────────────────────────── -->
+    <section class="section about" id="about" aria-label="About me">
+      <div class="section__inner">
+        <h2 class="section__title reveal">
+          <span class="section__number" aria-hidden="true">01.</span> About Me
+        </h2>
+        <div class="about__content">
+          <div class="about__text reveal">
+            <p>
+              I'm a dedicated software developer with a strong focus on building reliable, maintainable applications
+              and implementing effective test automation strategies. With experience across the full stack,
+              I bring a quality-first mindset to every project I work on.
+            </p>
+            <p>
+              My approach combines clean architecture principles with pragmatic problem-solving.
+              I believe in writing code that not only works but is well-tested, well-documented,
+              and easy for teams to maintain and extend.
+            </p>
+            <p>
+              When I'm not coding, I enjoy exploring new technologies, contributing to open-source
+              projects, and continuously improving my craft through learning and experimentation.
+            </p>
+          </div>
+          <div class="about__highlights reveal">
+            <div class="about__card">
+              <span class="about__card-number">3+</span>
+              <span class="about__card-label">Years Experience</span>
+            </div>
+            <div class="about__card">
+              <span class="about__card-number">15+</span>
+              <span class="about__card-label">Projects Completed</span>
+            </div>
+            <div class="about__card">
+              <span class="about__card-number">100%</span>
+              <span class="about__card-label">Test Coverage Goal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Skills Section ────────────────────────────────── -->
+    <section class="section skills" id="skills" aria-label="Skills">
+      <div class="section__inner">
+        <h2 class="section__title reveal">
+          <span class="section__number" aria-hidden="true">02.</span> Skills &amp; Technologies
+        </h2>
+        <div class="skills__grid">
+          <div class="skills__category reveal">
+            <h3 class="skills__category-title">Languages</h3>
+            <ul class="skills__list" role="list">
+              <li class="skills__item">JavaScript / TypeScript</li>
+              <li class="skills__item">Python</li>
+              <li class="skills__item">Java</li>
+              <li class="skills__item">HTML5 / CSS3</li>
+              <li class="skills__item">SQL</li>
+            </ul>
+          </div>
+          <div class="skills__category reveal">
+            <h3 class="skills__category-title">Frameworks &amp; Libraries</h3>
+            <ul class="skills__list" role="list">
+              <li class="skills__item">Node.js / Express</li>
+              <li class="skills__item">React</li>
+              <li class="skills__item">Playwright</li>
+              <li class="skills__item">Selenium</li>
+              <li class="skills__item">Jest / Mocha</li>
+            </ul>
+          </div>
+          <div class="skills__category reveal">
+            <h3 class="skills__category-title">Tools &amp; Platforms</h3>
+            <ul class="skills__list" role="list">
+              <li class="skills__item">Git / GitHub</li>
+              <li class="skills__item">Docker</li>
+              <li class="skills__item">CI/CD Pipelines</li>
+              <li class="skills__item">VS Code</li>
+              <li class="skills__item">Linux / macOS</li>
+            </ul>
+          </div>
+          <div class="skills__category reveal">
+            <h3 class="skills__category-title">Testing &amp; QA</h3>
+            <ul class="skills__list" role="list">
+              <li class="skills__item">E2E Testing</li>
+              <li class="skills__item">API Testing</li>
+              <li class="skills__item">Performance Testing</li>
+              <li class="skills__item">Test Strategy</li>
+              <li class="skills__item">BDD / TDD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Projects Section ──────────────────────────────── -->
+    <section class="section projects" id="projects" aria-label="Projects">
+      <div class="section__inner">
+        <h2 class="section__title reveal">
+          <span class="section__number" aria-hidden="true">03.</span> Featured Projects
+        </h2>
+        <div class="projects__grid">
+          <article class="project-card reveal" aria-label="Portfolio Website project">
+            <div class="project-card__header">
+              <svg class="project-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3 7V17C3 18.1 3.9 19 5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7Z"/>
+                <path d="M3 7L12 13L21 7"/>
+              </svg>
+              <div class="project-card__links">
+                <a href="https://github.com/AbdullahOztoprak/My-Portfolio-Website" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub" class="project-card__link">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Portfolio Website</h3>
+            <p class="project-card__description">
+              A modern, responsive personal portfolio built with Node.js, Express, and vanilla JavaScript.
+              Features smooth animations, form validation, and comprehensive Playwright E2E tests.
+            </p>
+            <ul class="project-card__tags" aria-label="Technologies used">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>Playwright</li>
+              <li>CSS3</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal" aria-label="Test Automation Framework project">
+            <div class="project-card__header">
+              <svg class="project-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+              <div class="project-card__links">
+                <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub" class="project-card__link">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Test Automation Framework</h3>
+            <p class="project-card__description">
+              A scalable test automation framework built with Playwright supporting parallel execution,
+              custom reporters, and cross-browser testing for web applications.
+            </p>
+            <ul class="project-card__tags" aria-label="Technologies used">
+              <li>Playwright</li>
+              <li>TypeScript</li>
+              <li>CI/CD</li>
+              <li>Docker</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal" aria-label="REST API Service project">
+            <div class="project-card__header">
+              <svg class="project-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              <div class="project-card__links">
+                <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub" class="project-card__link">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">REST API Service</h3>
+            <p class="project-card__description">
+              A RESTful API service with authentication, rate limiting, and comprehensive input validation.
+              Built with Express.js following clean architecture principles.
+            </p>
+            <ul class="project-card__tags" aria-label="Technologies used">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>REST</li>
+              <li>Jest</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Experience Section ────────────────────────────── -->
+    <section class="section experience" id="experience" aria-label="Experience">
+      <div class="section__inner">
+        <h2 class="section__title reveal">
+          <span class="section__number" aria-hidden="true">04.</span> Experience
+        </h2>
+        <div class="experience__timeline">
+          <div class="experience__item reveal">
+            <div class="experience__marker" aria-hidden="true"></div>
+            <div class="experience__content">
+              <div class="experience__header">
+                <h3 class="experience__role">Software Developer &amp; QA Engineer</h3>
+                <span class="experience__period">2023 — Present</span>
+              </div>
+              <p class="experience__company">Professional Experience</p>
+              <ul class="experience__details">
+                <li>Developed and maintained web applications using modern JavaScript frameworks</li>
+                <li>Designed and implemented comprehensive E2E test suites with Playwright</li>
+                <li>Collaborated with cross-functional teams to deliver high-quality features on schedule</li>
+                <li>Improved test coverage from 40% to 95% across critical user flows</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience__item reveal">
+            <div class="experience__marker" aria-hidden="true"></div>
+            <div class="experience__content">
+              <div class="experience__header">
+                <h3 class="experience__role">Bachelor's in Computer Science</h3>
+                <span class="experience__period">2020 — 2024</span>
+              </div>
+              <p class="experience__company">Education</p>
+              <ul class="experience__details">
+                <li>Focused on software engineering, algorithms, and data structures</li>
+                <li>Completed coursework in web development, databases, and distributed systems</li>
+                <li>Worked on multiple team projects applying agile methodologies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Contact Section ───────────────────────────────── -->
+    <section class="section contact" id="contact" aria-label="Contact">
+      <div class="section__inner">
+        <h2 class="section__title reveal">
+          <span class="section__number" aria-hidden="true">05.</span> Get In Touch
+        </h2>
+        <p class="contact__intro reveal">
+          I'm always open to new opportunities, collaborations, or just a friendly conversation.
+          Feel free to reach out — I'll get back to you as soon as I can.
+        </p>
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName" class="form-label">Name</label>
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              class="form-input"
+              placeholder="Your name"
+              required
+              minlength="2"
+              maxlength="100"
+              autocomplete="name"
+              aria-describedby="nameError"
+            />
+            <span class="form-error" id="nameError" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="email"
+              class="form-input"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+              aria-describedby="emailError"
+            />
+            <span class="form-error" id="emailError" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="form-group form-group--full">
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              class="form-input form-textarea"
+              placeholder="Your message..."
+              required
+              minlength="10"
+              maxlength="2000"
+              rows="5"
+              aria-describedby="messageError"
+            ></textarea>
+            <span class="form-error" id="messageError" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="form-group form-group--full">
+            <button type="submit" class="btn btn--primary btn--submit" id="submitBtn">
+              <span class="btn__text">Send Message</span>
+              <span class="btn__loader" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="form-result" id="formResult" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__text">&copy; 2025 Abdullah ÖzToprak. Built with care and tested with Playwright.</p>
+      <div class="footer__links">
+        <a href="https://github.com/AbdullahOztoprak" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
