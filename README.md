@@ -1,66 +1,101 @@
-# 👋 Welcome!
+# Abdullah ÖzToprak — Portfolio Website
 
-Hi, I’m Abdullah ÖzToprak. This is my personal portfolio website—a place where I showcase my projects, experience, and passion for software development and test automation.
+A modern, responsive personal portfolio website built with Node.js, Express, and vanilla JavaScript. Features smooth animations, contact form with server-side validation, and comprehensive Playwright E2E tests.
 
-## 🚀 Features
-- **Modern, responsive design** – Looks great on any device
-- **Smooth navigation** – Animated scroll, active menu highlights, and a scroll progress bar
-- **Contact form** – Send me a message directly from the site (with validation and feedback)
-- **Node.js Express backend** – Fast and simple server
-- **Automated Playwright tests** – Ensures everything works as expected
+## Features
 
-## 🛠️ Getting Started
+- **Semantic HTML5** with full accessibility support (ARIA labels, keyboard navigation, skip links)
+- **Modern CSS** using custom properties, Flexbox, Grid, and responsive design (mobile-first)
+- **Smooth UX** — scroll progress bar, active nav highlighting, fade-in animations, sticky header
+- **Contact form** — client-side + server-side validation with real-time feedback
+- **Node.js Express backend** — REST API architecture with proper error handling
+- **Playwright E2E tests** — 20+ tests covering navigation, forms, responsiveness, and accessibility
+
+## Tech Stack
+
+| Layer     | Technology                    |
+|-----------|-------------------------------|
+| Frontend  | HTML5, CSS3, Vanilla JS (ES6+)|
+| Backend   | Node.js, Express              |
+| Testing   | Playwright                    |
+
+## Project Structure
+
+```
+├── public/
+│   ├── index.html          # Semantic HTML with all sections
+│   ├── style.css           # Design system with CSS custom properties
+│   └── script.js           # Modular vanilla JavaScript
+├── server/
+│   ├── index.js            # Express app configuration
+│   ├── routes/
+│   │   └── contact.js      # Contact API route
+│   └── controllers/
+│       └── contactController.js  # Validation & processing
+├── tests/
+│   └── portfolio.spec.js   # Playwright E2E test suite
+├── index.js                # Server entry point
+├── package.json
+├── playwright.config.js
+└── README.md
+```
+
+## Getting Started
 
 ### Prerequisites
-- Node.js (v16 or newer)
+
+- Node.js (v16+)
 - npm
 
-### Quick Start
-1. Clone this repo:
-   ```sh
-   git clone https://github.com/AbdullahOztoprak/My-Portfolio-Website.git
-   cd My-Portfolio-Website
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
+### Installation
 
-### Start the Website
 ```sh
-node index.js
-```
-Open your browser and visit [http://localhost:3000](http://localhost:3000)
-
-### Run the Tests
-1. Make sure the server is running (`node index.js`).
-2. In a new terminal, run:
-   ```sh
-   npx playwright test
-   ```
-
-## 🗂️ Project Structure
-```
-public/
-  index.html
-  style.css
-  script.js
-index.js
-package.json
-README.md
-tests/
-  portfolio.spec.js
+git clone https://github.com/AbdullahOztoprak/My-Portfolio-Website.git
+cd My-Portfolio-Website
+npm install
 ```
 
-## 💡 Tips
-- You can easily add your own projects and experiences by editing `index.html`.
-- The frontend script (`public/script.js`) is modular and easy to extend.
-- All tests are in `tests/portfolio.spec.js`—add more to keep your site robust!
+### Start the Server
 
-## 📬 Contact
-Have feedback, questions, or just want to say hi? Use the contact form on the site or reach out via GitHub.
+```sh
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Run Tests
+
+1. Start the server in one terminal: `npm start`
+2. In another terminal:
+
+```sh
+npm test
+```
+
+Run tests in headed mode:
+
+```sh
+npm run test:headed
+```
+
+## Sections
+
+| Section     | Description                                      |
+|-------------|--------------------------------------------------|
+| Hero        | Name, title, intro, and CTA buttons              |
+| About       | Bio and highlight cards (experience, projects)    |
+| Skills      | Categorized technical skills                      |
+| Projects    | Featured project cards with tech tags and links   |
+| Experience  | Timeline-style work and education history         |
+| Contact     | Validated contact form with server-side processing|
+
+## Design Principles
+
+- **Minimal & professional** — clean typography, consistent spacing, subtle animations
+- **Responsive** — mobile-first design that works on all screen sizes
+- **Accessible** — semantic HTML, ARIA attributes, keyboard navigation, reduced-motion support
+- **Fast** — no external JS dependencies, optimized CSS, minimal payload
 
 ---
-Thanks for stopping by! If you like this project, feel free to star it or fork for your own use. 😊
 
 © 2025 Abdullah ÖzToprak
