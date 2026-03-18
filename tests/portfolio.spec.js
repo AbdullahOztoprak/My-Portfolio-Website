@@ -2,332 +2,381 @@
 const { test, expect } = require('@playwright/test');
 
 /**
- * Portfolio Website — End-to-End Tests
+ * Engineering Identity Platform — End-to-End Tests
  *
- * Covers: page load, navigation, sections visibility,
- * contact form validation, form submission, responsive layout,
- * scroll progress, and accessibility fundamentals.
+ * Covers: page load, meta, header/nav, hero, about, skills,
+ * projects, experience, dashboard, contact form (validation,
+ * submission, reset), scroll progress, footer, responsive nav,
+ * and accessibility fundamentals.
  */
 
-test.describe('Portfolio Website', () => {
-  test.beforeEach(async ({ page }) => {
+/* ═══════════ PAGE LOAD ═══════════ */
+test.describe('Page load', () => {
+  test('loads with correct title', async ({ page }) => {
     await page.goto('/');
-    // Wait for DOMContentLoaded-driven JS to initialize
-    await page.waitForLoadState('domcontentloaded');
+    await expect(page).toHaveTitle(/Abdullah.*Öztoprak/);
   });
 
-  /* ══════════════════════════════════════════════════════
-     PAGE LOAD & META
-     ══════════════════════════════════════════════════════ */
-  test('page loads successfully with correct title', async ({ page }) => {
-    await expect(page).toHaveTitle(/Abdullah.*ÖzToprak/);
+  test('contains meta description', async ({ page }) => {
+    await page.goto('/');
+    const desc = page.locator('meta[name="description"]');
+    await expect(desc).toHaveAttribute('content', /Cyber Security|Platform Engineering|Backend/i);
   });
 
-  test('page has a meta description', async ({ page }) => {
-    const meta = page.locator('meta[name="description"]');
-    await expect(meta).toHaveAttribute('content', /portfolio|software|developer/i);
+  test('contains theme-color meta', async ({ page }) => {
+    await page.goto('/');
+    const meta = page.locator('meta[name="theme-color"]');
+    await expect(meta).toHaveAttribute('content', '#09090b');
+  });
+});
+
+/* ═══════════ HEADER & NAVIGATION ═══════════ */
+test.describe('Header & Navigation', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('header is visible', async ({ page }) => {
+    await expect(page.locator('.header')).toBeVisible();
   });
 
-  /* ══════════════════════════════════════════════════════
-     HEADER & NAVIGATION
-     ══════════════════════════════════════════════════════ */
-  test('header is visible with logo and navigation', async ({ page }) => {
-    const header = page.locator('.header');
-    await expect(header).toBeVisible();
-
+  test('logo links to hero', async ({ page }) => {
     const logo = page.locator('.header__logo');
-    await expect(logo).toBeVisible();
-
-    const navLinks = page.locator('.nav__link');
-    const count = await navLinks.count();
-    expect(count).toBeGreaterThanOrEqual(4);
+    await expect(logo).toHaveAttribute('href', '#hero');
   });
 
-  test('navigation links scroll to correct sections', async ({ page }) => {
-    // Click "About" nav link
-    await page.click('.nav__link[href="#about"]');
-    await page.waitForTimeout(600);
-    const aboutSection = page.locator('#about');
-    await expect(aboutSection).toBeInViewport();
-
-    // Click "Projects" nav link
-    await page.click('.nav__link[href="#projects"]');
-    await page.waitForTimeout(600);
-    const projectsSection = page.locator('#projects');
-    await expect(projectsSection).toBeInViewport();
-
-    // Click "Contact" nav link
-    await page.click('.nav__link[href="#contact"]');
-    await page.waitForTimeout(600);
-    const contactSection = page.locator('#contact');
-    await expect(contactSection).toBeInViewport();
+  test('nav contains all section links', async ({ page }) => {
+    const links = page.locator('.nav__link');
+    await expect(links).toHaveCount(6);
+    const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+    expect(hrefs).toEqual(['#about', '#skills', '#projects', '#experience', '#dashboard', '#contact']);
   });
 
-  test('header becomes opaque on scroll', async ({ page }) => {
-    // Scroll down
-    await page.evaluate(() => window.scrollTo(0, 300));
-    await page.waitForTimeout(200);
+  test('header CTA links to contact', async ({ page }) => {
+    const cta = page.locator('.header__cta');
+    await expect(cta).toHaveAttribute('href', '#contact');
+    await expect(cta).toHaveText('Get In Touch');
+  });
+});
 
-    const header = page.locator('.header');
-    await expect(header).toHaveClass(/scrolled/);
+/* ═══════════ HERO ═══════════ */
+test.describe('Hero section', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('hero name is visible', async ({ page }) => {
+    await expect(page.locator('.hero__name')).toContainText('Abdullah');
   });
 
-  /* ══════════════════════════════════════════════════════
-     HERO SECTION
-     ══════════════════════════════════════════════════════ */
-  test('hero section displays name and role', async ({ page }) => {
-    const name = page.locator('.hero__name');
-    await expect(name).toContainText('Abdullah');
-    await expect(name).toContainText('ÖzToprak');
-
-    const title = page.locator('.hero__title');
-    await expect(title).toBeVisible();
-    await expect(title).toContainText(/developer|engineer/i);
+  test('typing animation container exists', async ({ page }) => {
+    await expect(page.locator('#typingText')).toBeAttached();
   });
 
-  test('hero has call-to-action buttons', async ({ page }) => {
-    const primaryBtn = page.locator('.hero__actions .btn--primary');
-    await expect(primaryBtn).toBeVisible();
-
-    const outlineBtn = page.locator('.hero__actions .btn--outline');
-    await expect(outlineBtn).toBeVisible();
+  test('typing text appears within 3 seconds', async ({ page }) => {
+    const typing = page.locator('#typingText');
+    await expect(typing).not.toHaveText('', { timeout: 3000 });
   });
 
-  /* ══════════════════════════════════════════════════════
-     MAIN SECTIONS VISIBILITY
-     ══════════════════════════════════════════════════════ */
-  test('all main sections are present in the DOM', async ({ page }) => {
-    const sectionIds = ['hero', 'about', 'skills', 'projects', 'experience', 'contact'];
+  test('hero has View Projects and Download CV buttons', async ({ page }) => {
+    await expect(page.locator('.hero__actions .btn--primary')).toContainText('View Projects');
+    await expect(page.locator('.hero__actions .btn--outline')).toContainText('Download CV');
+  });
 
-    for (const id of sectionIds) {
-      const section = page.locator(`#${id}`);
-      await expect(section).toBeAttached();
+  test('terminal card is visible', async ({ page }) => {
+    await expect(page.locator('.hero__terminal')).toBeVisible();
+  });
+
+  test('available badge is present', async ({ page }) => {
+    await expect(page.locator('.hero__badge')).toContainText('Available');
+  });
+});
+
+/* ═══════════ ENGINEERING PROFILE (ABOUT) ═══════════ */
+test.describe('Engineering Profile section', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('about section exists with correct title', async ({ page }) => {
+    const title = page.locator('#about .section__title');
+    await expect(title).toContainText('Engineering Profile');
+  });
+
+  test('displays 3 focus area cards', async ({ page }) => {
+    const cards = page.locator('#about .focus-card');
+    await expect(cards).toHaveCount(3);
+  });
+
+  test('displays stat cards', async ({ page }) => {
+    const stats = page.locator('#about .stat-card');
+    await expect(stats).toHaveCount(4);
+  });
+
+  test('mentions Siemens and Insider', async ({ page }) => {
+    const text = page.locator('#about .about__text');
+    await expect(text).toContainText('Siemens');
+    await expect(text).toContainText('Insider');
+  });
+});
+
+/* ═══════════ SKILLS ═══════════ */
+test.describe('Skills section', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('skills section has correct title', async ({ page }) => {
+    await expect(page.locator('#skills .section__title')).toContainText('Technical Arsenal');
+  });
+
+  test('shows 4 skill categories', async ({ page }) => {
+    const cats = page.locator('#skills .skills__category');
+    await expect(cats).toHaveCount(4);
+  });
+
+  test('each category has skill bars', async ({ page }) => {
+    const bars = page.locator('#skills .skills__bar-fill');
+    const count = await bars.count();
+    expect(count).toBeGreaterThanOrEqual(15);
+  });
+});
+
+/* ═══════════ PROJECTS ═══════════ */
+test.describe('Projects section', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('projects section has correct title', async ({ page }) => {
+    await expect(page.locator('#projects .section__title')).toContainText('Featured Projects');
+  });
+
+  test('displays 5 project cards', async ({ page }) => {
+    const cards = page.locator('#projects .project-card');
+    await expect(cards).toHaveCount(5);
+  });
+
+  test('project cards have titles and descriptions', async ({ page }) => {
+    const titles = page.locator('.project-card__title');
+    const count = await titles.count();
+    for (let i = 0; i < count; i++) {
+      await expect(titles.nth(i)).not.toHaveText('');
     }
   });
 
-  test('about section has highlight cards', async ({ page }) => {
-    const cards = page.locator('.about__card');
-    const count = await cards.count();
+  test('project cards have technology tags', async ({ page }) => {
+    const firstTags = page.locator('.project-card').first().locator('.project-card__tags li');
+    const count = await firstTags.count();
     expect(count).toBeGreaterThanOrEqual(3);
   });
 
-  test('skills section displays categorized skills', async ({ page }) => {
-    const categories = page.locator('.skills__category');
-    const count = await categories.count();
-    expect(count).toBeGreaterThanOrEqual(3);
+  test('contains Secure Interview System project', async ({ page }) => {
+    await expect(page.locator('.project-card__title', { hasText: 'Secure Interview System' })).toBeVisible();
+  });
+});
 
-    // Each category should have items
-    const items = page.locator('.skills__item');
-    const itemCount = await items.count();
-    expect(itemCount).toBeGreaterThanOrEqual(10);
+/* ═══════════ EXPERIENCE ═══════════ */
+test.describe('Experience section', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('experience section has correct title', async ({ page }) => {
+    await expect(page.locator('#experience .section__title')).toContainText('Experience');
   });
 
-  test('projects section lists project cards', async ({ page }) => {
-    const projects = page.locator('.project-card');
-    const count = await projects.count();
-    expect(count).toBeGreaterThanOrEqual(2);
-
-    // Each card should have a title and description
-    const firstTitle = projects.first().locator('.project-card__title');
-    await expect(firstTitle).toBeAttached();
-    const firstDesc = projects.first().locator('.project-card__description');
-    await expect(firstDesc).toBeAttached();
-  });
-
-  test('experience section shows timeline items', async ({ page }) => {
+  test('displays 4 timeline items', async ({ page }) => {
     const items = page.locator('.experience__item');
-    const count = await items.count();
-    expect(count).toBeGreaterThanOrEqual(1);
+    await expect(items).toHaveCount(4);
   });
 
-  /* ══════════════════════════════════════════════════════
-     CONTACT FORM — VALIDATION
-     ══════════════════════════════════════════════════════ */
-  test('contact form shows validation errors on empty submit', async ({ page }) => {
-    const submitBtn = page.locator('#submitBtn');
-    await submitBtn.scrollIntoViewIfNeeded();
-    await submitBtn.click();
-
-    // Should show result message about filling fields
-    const result = page.locator('#formResult');
-    await expect(result).toBeVisible();
-    await expect(result).toContainText(/fill in all fields/i);
+  test('first item is Siemens Cyber Security Intern', async ({ page }) => {
+    const first = page.locator('.experience__item').first();
+    await expect(first.locator('.experience__role')).toContainText('Cyber Security Intern');
+    await expect(first.locator('.experience__company')).toContainText('Siemens');
   });
 
-  test('contact form shows field-level errors for invalid input', async ({ page }) => {
+  test('timeline has marker elements', async ({ page }) => {
+    const markers = page.locator('.experience__marker');
+    const count = await markers.count();
+    expect(count).toBe(4);
+  });
+});
+
+/* ═══════════ DASHBOARD ═══════════ */
+test.describe('Engineering Dashboard', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('dashboard section has correct title', async ({ page }) => {
+    await expect(page.locator('#dashboard .section__title')).toContainText('Engineering Dashboard');
+  });
+
+  test('contribution chart container exists', async ({ page }) => {
+    await expect(page.locator('#contributionChart')).toBeAttached();
+  });
+
+  test('dashboard displays metric cards', async ({ page }) => {
+    const cards = page.locator('#dashboard .dash-card');
+    const count = await cards.count();
+    expect(count).toBeGreaterThanOrEqual(4);
+  });
+
+  test('languages breakdown is visible', async ({ page }) => {
+    const langs = page.locator('.dash-lang');
+    const count = await langs.count();
+    expect(count).toBeGreaterThanOrEqual(4);
+  });
+});
+
+/* ═══════════ CONTACT FORM ═══════════ */
+test.describe('Contact form', () => {
+  test.beforeEach(async ({ page }) => { await page.goto('/'); });
+
+  test('contact section has correct title', async ({ page }) => {
+    await expect(page.locator('#contact .section__title')).toContainText('Get In Touch');
+  });
+
+  test('form has name, email, message fields and submit', async ({ page }) => {
+    await expect(page.locator('#contactName')).toBeAttached();
+    await expect(page.locator('#contactEmail')).toBeAttached();
+    await expect(page.locator('#contactMessage')).toBeAttached();
+    await expect(page.locator('#submitBtn')).toBeAttached();
+  });
+
+  test('shows validation errors on empty submit', async ({ page }) => {
+    await page.locator('#submitBtn').click();
+    const nameErr = page.locator('#nameError');
+    const emailErr = page.locator('#emailError');
+    const msgErr = page.locator('#messageError');
+    await expect(nameErr).not.toHaveText('');
+    await expect(emailErr).not.toHaveText('');
+    await expect(msgErr).not.toHaveText('');
+  });
+
+  test('shows error for short name', async ({ page }) => {
+    await page.fill('#contactName', 'A');
+    await page.locator('#contactName').blur();
+    await expect(page.locator('#nameError')).toContainText('2–100');
+  });
+
+  test('shows error for invalid email', async ({ page }) => {
+    await page.fill('#contactEmail', 'notanemail');
+    await page.locator('#contactEmail').blur();
+    await expect(page.locator('#emailError')).toContainText('valid email');
+  });
+
+  test('shows error for short message', async ({ page }) => {
+    await page.fill('#contactMessage', 'Hi');
+    await page.locator('#contactMessage').blur();
+    await expect(page.locator('#messageError')).toContainText('10–2000');
+  });
+
+  test('clears error when valid input provided', async ({ page }) => {
     const nameInput = page.locator('#contactName');
-    const emailInput = page.locator('#contactEmail');
-    const messageInput = page.locator('#contactMessage');
-
-    // Type only 1 char in name and blur
-    await nameInput.scrollIntoViewIfNeeded();
     await nameInput.fill('A');
     await nameInput.blur();
-    const nameError = page.locator('#nameError');
-    await expect(nameError).toContainText(/at least 2 characters/i);
-
-    // Type invalid email and blur
-    await emailInput.fill('notanemail');
-    await emailInput.blur();
-    const emailError = page.locator('#emailError');
-    await expect(emailError).toContainText(/valid email/i);
-
-    // Type short message and blur
-    await messageInput.fill('Hi');
-    await messageInput.blur();
-    const messageError = page.locator('#messageError');
-    await expect(messageError).toContainText(/at least 10 characters/i);
-  });
-
-  test('contact form clears errors when valid input is provided', async ({ page }) => {
-    const nameInput = page.locator('#contactName');
-    await nameInput.scrollIntoViewIfNeeded();
-
-    // Trigger error
-    await nameInput.fill('A');
-    await nameInput.blur();
-    await expect(page.locator('#nameError')).not.toBeEmpty();
-
-    // Fix input
+    await expect(page.locator('#nameError')).not.toHaveText('');
     await nameInput.fill('Abdullah');
     await nameInput.blur();
-    await expect(page.locator('#nameError')).toBeEmpty();
-    await expect(nameInput).toHaveClass(/valid/);
+    await expect(page.locator('#nameError')).toHaveText('');
   });
 
-  /* ══════════════════════════════════════════════════════
-     CONTACT FORM — SUBMISSION
-     ══════════════════════════════════════════════════════ */
-  test('contact form submits successfully with valid data', async ({ page }) => {
-    await page.locator('#contactName').scrollIntoViewIfNeeded();
+  test('successful submission shows success message', async ({ page }) => {
     await page.fill('#contactName', 'Test User');
     await page.fill('#contactEmail', 'test@example.com');
-    await page.fill('#contactMessage', 'Hello, this is a test message for the portfolio.');
-
-    const submitBtn = page.locator('#submitBtn');
-    await submitBtn.click();
-
-    // Button should show loading state
-    await expect(submitBtn).toBeDisabled();
-
-    // Wait for success message
-    const result = page.locator('#formResult');
-    await expect(result).toContainText(/thank you/i, { timeout: 5000 });
-    await expect(result).toHaveClass(/success/);
-
-    // Button should be re-enabled
-    await expect(submitBtn).toBeEnabled();
-  });
-
-  test('contact form resets after successful submission', async ({ page }) => {
-    await page.locator('#contactName').scrollIntoViewIfNeeded();
-    await page.fill('#contactName', 'Test User');
-    await page.fill('#contactEmail', 'test@example.com');
-    await page.fill('#contactMessage', 'Hello, this is a test message for the portfolio.');
-
+    await page.fill('#contactMessage', 'This is a valid test message.');
     await page.locator('#submitBtn').click();
-    await expect(page.locator('#formResult')).toContainText(/thank you/i, { timeout: 5000 });
+    const result = page.locator('#formResult');
+    await expect(result).toBeVisible({ timeout: 5000 });
+    await expect(result).toHaveClass(/success/);
+  });
 
-    // Fields should be cleared
+  test('form resets after successful submission', async ({ page }) => {
+    await page.fill('#contactName', 'Test User');
+    await page.fill('#contactEmail', 'test@example.com');
+    await page.fill('#contactMessage', 'This is a valid test message.');
+    await page.locator('#submitBtn').click();
+    await expect(page.locator('#formResult')).toHaveClass(/success/, { timeout: 5000 });
     await expect(page.locator('#contactName')).toHaveValue('');
     await expect(page.locator('#contactEmail')).toHaveValue('');
     await expect(page.locator('#contactMessage')).toHaveValue('');
   });
+});
 
-  /* ══════════════════════════════════════════════════════
-     SCROLL PROGRESS BAR
-     ══════════════════════════════════════════════════════ */
-  test('scroll progress bar updates on scroll', async ({ page }) => {
-    const progressBar = page.locator('#scrollProgress');
-    const initialWidth = await progressBar.evaluate((el) => el.style.width);
+/* ═══════════ SCROLL PROGRESS ═══════════ */
+test.describe('Scroll progress', () => {
+  test('scroll progress bar exists', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('#scrollProgress')).toBeAttached();
+  });
 
-    // Scroll to bottom
+  test('scroll progress grows on scroll', async ({ page }) => {
+    await page.goto('/');
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(200);
+    await page.waitForTimeout(500);
+    const width = await page.locator('#scrollProgress').evaluate((el) => parseFloat(el.style.width));
+    expect(width).toBeGreaterThan(20);
+  });
+});
 
-    const finalWidth = await progressBar.evaluate((el) => el.style.width);
-    // After scrolling to bottom, progress should be near 100%
-    expect(parseFloat(finalWidth)).toBeGreaterThan(parseFloat(initialWidth || '0'));
+/* ═══════════ FOOTER ═══════════ */
+test.describe('Footer', () => {
+  test('footer contains copyright', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.footer')).toContainText('2025');
+    await expect(page.locator('.footer')).toContainText('Abdullah Öztoprak');
   });
 
-  /* ══════════════════════════════════════════════════════
-     FOOTER
-     ══════════════════════════════════════════════════════ */
-  test('footer is visible and contains copyright', async ({ page }) => {
-    const footer = page.locator('footer');
-    await footer.scrollIntoViewIfNeeded();
-    await expect(footer).toBeVisible();
-    await expect(footer).toContainText('Abdullah ÖzToprak');
-    await expect(footer).toContainText('©');
+  test('footer has GitHub and LinkedIn links', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('.footer__links a');
+    await expect(links).toHaveCount(2);
   });
+});
 
-  /* ══════════════════════════════════════════════════════
-     RESPONSIVE LAYOUT
-     ══════════════════════════════════════════════════════ */
-  test('mobile nav toggle is visible on small screens', async ({ page }) => {
+/* ═══════════ RESPONSIVE (MOBILE TOGGLE) ═══════════ */
+test.describe('Responsive navigation', () => {
+  test('mobile: nav toggle is visible, nav is hidden', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
-    await page.waitForTimeout(100);
-
-    const toggle = page.locator('.nav-toggle');
-    await expect(toggle).toBeVisible();
+    await page.goto('/');
+    await expect(page.locator('#navToggle')).toBeVisible();
+    await expect(page.locator('.nav')).not.toHaveClass(/open/);
   });
 
-  test('mobile nav toggle opens and closes menu', async ({ page }) => {
+  test('mobile: clicking toggle opens nav', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
-    await page.waitForTimeout(100);
-
-    const toggle = page.locator('.nav-toggle');
-    const nav = page.locator('#nav');
-
-    // Open menu
-    await toggle.click();
-    await expect(nav).toHaveClass(/open/);
-    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
-
-    // Close menu
-    await toggle.click();
-    await expect(nav).not.toHaveClass(/open/);
-    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await page.goto('/');
+    await page.locator('#navToggle').click();
+    await expect(page.locator('.nav')).toHaveClass(/open/);
+    await expect(page.locator('#navToggle')).toHaveAttribute('aria-expanded', 'true');
   });
 
-  test('nav toggle is hidden on desktop viewport', async ({ page }) => {
-    await page.setViewportSize({ width: 1280, height: 800 });
-    await page.waitForTimeout(100);
+  test('mobile: clicking a nav link closes menu', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/');
+    await page.locator('#navToggle').click();
+    await expect(page.locator('.nav')).toHaveClass(/open/);
+    await page.locator('.nav__link').first().click();
+    await expect(page.locator('.nav')).not.toHaveClass(/open/);
+  });
+});
 
-    const toggle = page.locator('.nav-toggle');
-    await expect(toggle).not.toBeVisible();
+/* ═══════════ ACCESSIBILITY ═══════════ */
+test.describe('Accessibility basics', () => {
+  test('skip link is present', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.skip-link')).toBeAttached();
+    await expect(page.locator('.skip-link')).toHaveAttribute('href', '#main');
   });
 
-  /* ══════════════════════════════════════════════════════
-     ACCESSIBILITY BASICS
-     ══════════════════════════════════════════════════════ */
-  test('skip link exists and is focusable', async ({ page }) => {
-    const skipLink = page.locator('.skip-link');
-    await expect(skipLink).toBeAttached();
-    await expect(skipLink).toHaveAttribute('href', '#main');
+  test('main landmark exists', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('main#main')).toBeAttached();
   });
 
-  test('all images and icons have proper ARIA attributes', async ({ page }) => {
-    // Decorative SVGs should have aria-hidden
-    const decorativeSvgs = page.locator('svg[aria-hidden="true"]');
-    const count = await decorativeSvgs.count();
+  test('all sections have aria-label', async ({ page }) => {
+    await page.goto('/');
+    const sections = page.locator('main > section');
+    const count = await sections.count();
+    for (let i = 0; i < count; i++) {
+      const label = await sections.nth(i).getAttribute('aria-label');
+      expect(label).toBeTruthy();
+    }
+  });
+
+  test('images and decorative SVGs have proper attributes', async ({ page }) => {
+    await page.goto('/');
+    const decorative = page.locator('[aria-hidden="true"]');
+    const count = await decorative.count();
     expect(count).toBeGreaterThan(0);
-  });
-
-  test('form inputs have associated labels', async ({ page }) => {
-    const nameLabel = page.locator('label[for="contactName"]');
-    await expect(nameLabel).toBeAttached();
-
-    const emailLabel = page.locator('label[for="contactEmail"]');
-    await expect(emailLabel).toBeAttached();
-
-    const messageLabel = page.locator('label[for="contactMessage"]');
-    await expect(messageLabel).toBeAttached();
-  });
-
-  test('nav has proper ARIA role and label', async ({ page }) => {
-    const nav = page.locator('nav[role="navigation"]');
-    await expect(nav).toBeAttached();
-    await expect(nav).toHaveAttribute('aria-label', /navigation/i);
   });
 });
