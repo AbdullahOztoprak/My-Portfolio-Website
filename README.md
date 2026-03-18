@@ -1,101 +1,79 @@
-# Abdullah ÖzToprak — Portfolio Website
+# Engineering Identity Platform
 
-A modern, responsive personal portfolio website built with Node.js, Express, and vanilla JavaScript. Features smooth animations, contact form with server-side validation, and comprehensive Playwright E2E tests.
+> A modern, dark-themed portfolio platform for **Abdullah Öztoprak** — Computer Engineering student focused on Cyber Security, Platform Engineering, and Backend Systems.
 
-## Features
+Inspired by Vercel, Stripe, Linear, and GitHub — this isn't a typical portfolio. It's a hybrid of LinkedIn, GitHub, and a personal engineering dashboard.
 
-- **Semantic HTML5** with full accessibility support (ARIA labels, keyboard navigation, skip links)
-- **Modern CSS** using custom properties, Flexbox, Grid, and responsive design (mobile-first)
-- **Smooth UX** — scroll progress bar, active nav highlighting, fade-in animations, sticky header
-- **Contact form** — client-side + server-side validation with real-time feedback
-- **Node.js Express backend** — REST API architecture with proper error handling
-- **Playwright E2E tests** — 20+ tests covering navigation, forms, responsiveness, and accessibility
+---
+
+## Sections
+
+| # | Section | Description |
+|---|---------|-------------|
+| 01 | **Hero** | Name, typing animation (roles cycle), terminal card, CTA buttons |
+| 02 | **Engineering Profile** | About text, focus area cards, stat counters |
+| 03 | **Technical Arsenal** | Skill categories with animated progress bars |
+| 04 | **Featured Projects** | GitHub-style project cards (5 projects) |
+| 05 | **Experience** | Animated timeline — Siemens, Insider, FIRST Robotics, Tutor |
+| 06 | **Engineering Dashboard** | Mock contribution chart, repo count, language breakdown |
+| 07 | **Contact** | Validated form + email, LinkedIn, GitHub links |
 
 ## Tech Stack
 
-| Layer     | Technology                    |
-|-----------|-------------------------------|
-| Frontend  | HTML5, CSS3, Vanilla JS (ES6+)|
-| Backend   | Node.js, Express              |
-| Testing   | Playwright                    |
+- **Frontend** — Semantic HTML5, CSS3 (custom properties, grid, flexbox), Vanilla ES6+ JavaScript
+- **Backend** — Node.js / Express with security headers, input sanitization, XSS prevention
+- **Testing** — Playwright E2E (30+ tests), parallel execution, cross-browser
+- **Design** — Dark mode, Inter + JetBrains Mono, CSS animations, IntersectionObserver reveals
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Install Playwright browsers
+npx playwright install chromium
+
+# Start the server
+npm start
+# → http://localhost:3000
+
+# Run tests
+npm test
+
+# Run tests with browser visible
+npm run test:headed
+```
 
 ## Project Structure
 
 ```
-├── public/
-│   ├── index.html          # Semantic HTML with all sections
-│   ├── style.css           # Design system with CSS custom properties
-│   └── script.js           # Modular vanilla JavaScript
+├── index.js                 # Entry point — starts Express server
 ├── server/
-│   ├── index.js            # Express app configuration
-│   ├── routes/
-│   │   └── contact.js      # Contact API route
+│   ├── index.js             # Express app, middleware, static serving
+│   ├── routes/contact.js    # POST /api/contact route
 │   └── controllers/
-│       └── contactController.js  # Validation & processing
+│       └── contactController.js  # Validation & sanitization
+├── public/
+│   ├── index.html           # Full platform UI (7 sections)
+│   ├── style.css            # Design system — dark theme, animations
+│   └── script.js            # Typing engine, counters, forms, reveals
 ├── tests/
-│   └── portfolio.spec.js   # Playwright E2E test suite
-├── index.js                # Server entry point
-├── package.json
-├── playwright.config.js
-└── README.md
+│   └── portfolio.spec.js    # 30+ Playwright E2E tests
+├── playwright.config.js     # Playwright configuration
+└── package.json
 ```
 
-## Getting Started
+## Scripts
 
-### Prerequisites
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start production server on port 3000 |
+| `npm run dev` | Start with `--watch` flag (auto-restart) |
+| `npm test` | Run all Playwright tests headless |
+| `npm run test:headed` | Run tests with visible browser |
+| `npm run test:ui` | Open Playwright UI runner |
 
-- Node.js (v16+)
-- npm
+## License
 
-### Installation
-
-```sh
-git clone https://github.com/AbdullahOztoprak/My-Portfolio-Website.git
-cd My-Portfolio-Website
-npm install
-```
-
-### Start the Server
-
-```sh
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Run Tests
-
-1. Start the server in one terminal: `npm start`
-2. In another terminal:
-
-```sh
-npm test
-```
-
-Run tests in headed mode:
-
-```sh
-npm run test:headed
-```
-
-## Sections
-
-| Section     | Description                                      |
-|-------------|--------------------------------------------------|
-| Hero        | Name, title, intro, and CTA buttons              |
-| About       | Bio and highlight cards (experience, projects)    |
-| Skills      | Categorized technical skills                      |
-| Projects    | Featured project cards with tech tags and links   |
-| Experience  | Timeline-style work and education history         |
-| Contact     | Validated contact form with server-side processing|
-
-## Design Principles
-
-- **Minimal & professional** — clean typography, consistent spacing, subtle animations
-- **Responsive** — mobile-first design that works on all screen sizes
-- **Accessible** — semantic HTML, ARIA attributes, keyboard navigation, reduced-motion support
-- **Fast** — no external JS dependencies, optimized CSS, minimal payload
-
----
-
-© 2025 Abdullah ÖzToprak
+MIT © 2025 Abdullah Öztoprak
