@@ -50,7 +50,13 @@ const I18N = {
     'skills.cat2': 'Frameworks & Systems',
     'skills.cat3': 'Tools & Platforms',
     'skills.cat4': 'Reliability & Security',
-    'section.projects': 'Featured Projects',
+    'section.projects': 'Selected Projects',
+    'about.capabilitiesTitle': 'Selected Capabilities',
+    'about.capability1': 'Go, Python, TypeScript',
+    'about.capability2': 'FastAPI, Express, Flutter',
+    'about.capability3': 'RAG, LLM integration, automation',
+    'about.capability4': 'PostgreSQL, Redis, CI/CD',
+    'about.capability5': 'Security, observability, RBAC',
     'projects.p1.title': 'industrial-rag-engine',
     'projects.p1.desc':
       'A modular Retrieval-Augmented Generation system for AI applications with structured knowledge retrieval, FastAPI serving, and scalable clean architecture. It is designed around retrieval quality, typed contracts, and safer answer grounding.',
@@ -102,30 +108,6 @@ const I18N = {
       'Active in the Computer Engineering Society, AI & Data Science Community, and peer tutoring programs.',
     'experience.role4.b3':
       'Bridged theory and practice through scalable backend systems, AI-driven tools, and agile project collaboration.',
-    'section.principles': 'Engineering Principles',
-    'principles.p1.title': 'Reliability by Design',
-    'principles.p1.text':
-      'Treat reliability as a design concern from the first commit, not as a late production patch.',
-    'principles.p2.title': 'Observability First',
-    'principles.p2.text':
-      'Build systems that explain themselves through logs, signals, traceability, and operational feedback.',
-    'principles.p3.title': 'Security-Aware Defaults',
-    'principles.p3.text':
-      'Prefer explicit trust boundaries, safer defaults, and controlled execution rather than permissive shortcuts.',
-    'principles.p4.title': 'Clear Architecture',
-    'principles.p4.text':
-      'Keep modules understandable, responsibilities explicit, and system evolution manageable over time.',
-    'principles.p5.title': 'Reproducible Delivery',
-    'principles.p5.text':
-      'Use documented workflows, testing discipline, and automation to make development and deployment repeatable.',
-    'focus.eyebrow': 'Current Focus',
-    'focus.title': 'What I am exploring right now',
-    'focus.description':
-      'I am currently pushing deeper into evaluation quality, backend reliability, and safer automation patterns for AI-assisted systems.',
-    'focus.item1': 'AI-powered systems with stronger evaluation and safety signals',
-    'focus.item2': 'Scalable retrieval, serving, and monitoring pipelines',
-    'focus.item3': 'Developer automation tools for safer operational workflows',
-    'focus.item4': 'System design that balances observability, security, and maintainability',
     'section.certifications': 'Licenses & Certifications',
     'certs.c1.issuer': 'T.C. Ministry of Industry and Technology',
     'certs.c1.title': 'Milli Teknoloji Akademisi Artificial Intelligence Fundamentals Certificate',
@@ -207,7 +189,13 @@ const I18N = {
     'skills.cat2': 'Framework ve Sistemler',
     'skills.cat3': 'Araçlar ve Platformlar',
     'skills.cat4': 'Guvenilirlik ve Guvenlik',
-    'section.projects': 'Öne Çıkan Projeler',
+    'section.projects': 'Secili Projeler',
+    'about.capabilitiesTitle': 'Secili Yetenekler',
+    'about.capability1': 'Go, Python, TypeScript',
+    'about.capability2': 'FastAPI, Express, Flutter',
+    'about.capability3': 'RAG, LLM entegrasyonu, otomasyon',
+    'about.capability4': 'PostgreSQL, Redis, CI/CD',
+    'about.capability5': 'Guvenlik, gozlemlenebilirlik, RBAC',
     'projects.p1.title': 'industrial-rag-engine',
     'projects.p1.desc':
       'AI uygulamalari icin yapilandirilmis bilgi retrieval, FastAPI servisleme ve olceklenebilir temiz mimari sunan moduler bir Retrieval-Augmented Generation sistemi. Retrieval kalitesi, tipli contract’lar ve daha guvenli cevap temellendirmesi etrafinda tasarlanmistir.',
@@ -259,30 +247,6 @@ const I18N = {
       'Bilgisayar Muhendisligi Toplulugu, AI & Data Science Community ve peer tutoring programlarinda aktif rol aldim.',
     'experience.role4.b3':
       'Olceklenebilir backend sistemleri, AI araclari ve agile proje is birlikleriyle teori-pratik koprusunu kurdum.',
-    'section.principles': 'Muhendislik Prensipleri',
-    'principles.p1.title': 'Tasarlanmis Guvenilirlik',
-    'principles.p1.text':
-      'Guvenilirligi sonradan eklenecek bir yama gibi degil, ilk committen itibaren bir tasarim karari olarak ele alirim.',
-    'principles.p2.title': 'Gozlemlenebilirlik Once Gelir',
-    'principles.p2.text':
-      'Loglar, sinyaller, izlenebilirlik ve operasyonel geri bildirim ile kendini anlatabilen sistemler kurmaya odaklanirim.',
-    'principles.p3.title': 'Guvenlik Farkindaligi Olan Varsayilanlar',
-    'principles.p3.text':
-      'Asiri izinli kisayollar yerine acik trust boundary, daha guvenli varsayilanlar ve kontrollu calistirma tercih ederim.',
-    'principles.p4.title': 'Net Mimari',
-    'principles.p4.text':
-      'Modulleri anlasilir, sorumluluklari acik ve zamanla gelisimi yonetilebilir sistemler kurmaya calisirim.',
-    'principles.p5.title': 'Tekrarlanabilir Teslimat',
-    'principles.p5.text':
-      'Dokumante is akislari, test disiplini ve otomasyon ile gelistirme ve dagitimi tekrar edilebilir hale getiririm.',
-    'focus.eyebrow': 'Guncel Odak',
-    'focus.title': 'Su anda ne uzerinde derinlesiyorum',
-    'focus.description':
-      'Su anda AI destekli sistemlerde evaluation kalitesi, backend guvenilirligi ve daha guvenli otomasyon kaliplari uzerinde daha derin calisiyorum.',
-    'focus.item1': 'Daha guclu evaluation ve safety signal yaklasimlari olan AI sistemleri',
-    'focus.item2': 'Olceklenebilir retrieval, serving ve monitoring pipeline tasarimlari',
-    'focus.item3': 'Daha guvenli operasyonel is akislari icin gelistirici otomasyon araclari',
-    'focus.item4': 'Gozlemlenebilirlik, guvenlik ve bakim kolayligi dengesini kuran sistem tasarimi',
     'section.certifications': 'Lisanslar ve Sertifikalar',
     'certs.c1.issuer': 'T.C. Sanayi ve Teknoloji Bakanligi',
     'certs.c1.title': 'Milli Teknoloji Akademisi Yapay Zeka Temel Egitim Sertifikasi',
