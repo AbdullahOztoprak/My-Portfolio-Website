@@ -28,7 +28,7 @@
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
@@ -171,24 +171,26 @@
             </div>
           </div>
         </div>
-        <div class="about__interests reveal">
-          <h3 class="about__subheading" data-i18n="about.interestsTitle">Core Interests</h3>
-          <div class="about__interest-list">
-            <span class="about__interest" data-i18n="about.interest1">AI systems and Retrieval-Augmented Generation</span>
-            <span class="about__interest" data-i18n="about.interest2">Backend architecture and service design</span>
-            <span class="about__interest" data-i18n="about.interest3">Automation platforms and developer tooling</span>
-            <span class="about__interest" data-i18n="about.interest4">Observability, reliability, and operations</span>
-            <span class="about__interest" data-i18n="about.interest5">Security-aware system design</span>
+        <div class="about__details-grid">
+          <div class="about__interests reveal">
+            <h3 class="about__subheading" data-i18n="about.interestsTitle">Core Interests</h3>
+            <div class="about__interest-list">
+              <span class="about__interest" data-i18n="about.interest1">AI systems and Retrieval-Augmented Generation</span>
+              <span class="about__interest" data-i18n="about.interest2">Backend architecture and service design</span>
+              <span class="about__interest" data-i18n="about.interest3">Automation platforms and developer tooling</span>
+              <span class="about__interest" data-i18n="about.interest4">Observability, reliability, and operations</span>
+              <span class="about__interest" data-i18n="about.interest5">Security-aware system design</span>
+            </div>
           </div>
-        </div>
-        <div class="about__interests reveal">
-          <h3 class="about__subheading" data-i18n="about.capabilitiesTitle">Selected Capabilities</h3>
-          <div class="about__interest-list">
-            <span class="about__interest" data-i18n="about.capability1">Go, Python, TypeScript</span>
-            <span class="about__interest" data-i18n="about.capability2">FastAPI, Express, Flutter</span>
-            <span class="about__interest" data-i18n="about.capability3">RAG, LLM integration, automation</span>
-            <span class="about__interest" data-i18n="about.capability4">PostgreSQL, Redis, CI/CD</span>
-            <span class="about__interest" data-i18n="about.capability5">Security, observability, RBAC</span>
+          <div class="about__interests reveal">
+            <h3 class="about__subheading" data-i18n="about.capabilitiesTitle">Selected Capabilities</h3>
+            <div class="about__interest-list">
+              <span class="about__interest" data-i18n="about.capability1">Go, Python, TypeScript</span>
+              <span class="about__interest" data-i18n="about.capability2">FastAPI, Express, Flutter</span>
+              <span class="about__interest" data-i18n="about.capability3">RAG, LLM integration, automation</span>
+              <span class="about__interest" data-i18n="about.capability4">PostgreSQL, Redis, CI/CD</span>
+              <span class="about__interest" data-i18n="about.capability5">Security, observability, RBAC</span>
+            </div>
           </div>
         </div>
       </div>
@@ -216,6 +218,7 @@
                 </a>
               </div>
             </div>
+            <p class="project-card__eyebrow" data-i18n="projects.p1.eyebrow">AI Systems</p>
             <h3 class="project-card__title" data-i18n="projects.p1.title">industrial-rag-engine</h3>
             <p class="project-card__description" data-i18n="projects.p1.desc">
               A modular Retrieval-Augmented Generation system for AI applications with structured knowledge retrieval, FastAPI serving, and scalable clean architecture. It is designed around retrieval quality, typed contracts, and safer answer grounding.
@@ -245,6 +248,7 @@
                 </a>
               </div>
             </div>
+            <p class="project-card__eyebrow" data-i18n="projects.p2.eyebrow">Backend Architecture</p>
             <h3 class="project-card__title" data-i18n="projects.p2.title">Backend-Path</h3>
             <p class="project-card__description" data-i18n="projects.p2.desc">
               A production-oriented Go backend architecture demonstrating layered service design, authentication, RBAC, PostgreSQL, Redis, and CI-driven development with maintainable operational boundaries.
@@ -274,6 +278,7 @@
                 </a>
               </div>
             </div>
+            <p class="project-card__eyebrow" data-i18n="projects.p3.eyebrow">Automation Platform</p>
             <h3 class="project-card__title" data-i18n="projects.p3.title">Tool_Flower</h3>
             <p class="project-card__description" data-i18n="projects.p3.desc">
               A secure automation control plane for executing operational tools locally or via SSH with policy enforcement, auditability, observability, and safer execution workflows.
@@ -303,6 +308,7 @@
                 </a>
               </div>
             </div>
+            <p class="project-card__eyebrow" data-i18n="projects.p4.eyebrow">Open Source</p>
             <h3 class="project-card__title" data-i18n="projects.p4.title">first-contribution-playground</h3>
             <p class="project-card__description" data-i18n="projects.p4.desc">
               An open-source friendly repository that teaches first pull request workflows through contributor onboarding, templates, automation, and beginner-friendly repository operations.
@@ -335,6 +341,7 @@
                 </a>
               </div>
             </div>
+            <p class="project-card__eyebrow" data-i18n="projects.p5.eyebrow">Product Build</p>
             <h3 class="project-card__title" data-i18n="projects.p5.title">Lingog</h3>
             <p class="project-card__description" data-i18n="projects.p5.desc">
               A Dart-based word puzzle game inspired by Wordle, designed around timed gameplay, progressive difficulty, and product-oriented application structure.

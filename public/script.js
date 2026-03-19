@@ -6,7 +6,6 @@
 const I18N = {
   en: {
     'nav.about': 'About',
-    'nav.skills': 'Skills',
     'nav.projects': 'Projects',
     'nav.experience': 'Experience',
     'nav.contact': 'Contact',
@@ -45,11 +44,6 @@ const I18N = {
     'about.interest3': 'Automation platforms and developer tooling',
     'about.interest4': 'Observability, reliability, and operations',
     'about.interest5': 'Security-aware system design',
-    'section.skills': 'Skills & Technologies',
-    'skills.cat1': 'Languages',
-    'skills.cat2': 'Frameworks & Systems',
-    'skills.cat3': 'Tools & Platforms',
-    'skills.cat4': 'Reliability & Security',
     'section.projects': 'Selected Projects',
     'about.capabilitiesTitle': 'Selected Capabilities',
     'about.capability1': 'Go, Python, TypeScript',
@@ -58,18 +52,23 @@ const I18N = {
     'about.capability4': 'PostgreSQL, Redis, CI/CD',
     'about.capability5': 'Security, observability, RBAC',
     'projects.p1.title': 'industrial-rag-engine',
+    'projects.p1.eyebrow': 'AI Systems',
     'projects.p1.desc':
       'A modular Retrieval-Augmented Generation system for AI applications with structured knowledge retrieval, FastAPI serving, and scalable clean architecture. It is designed around retrieval quality, typed contracts, and safer answer grounding.',
     'projects.p2.title': 'Backend-Path',
+    'projects.p2.eyebrow': 'Backend Architecture',
     'projects.p2.desc':
       'A production-oriented Go backend architecture demonstrating layered service design, authentication, RBAC, PostgreSQL, Redis, and CI-driven development with maintainable operational boundaries.',
     'projects.p3.title': 'Tool_Flower',
+    'projects.p3.eyebrow': 'Automation Platform',
     'projects.p3.desc':
       'A secure automation control plane for executing operational tools locally or via SSH with policy enforcement, auditability, observability, and safer execution workflows.',
     'projects.p4.title': 'first-contribution-playground',
+    'projects.p4.eyebrow': 'Open Source',
     'projects.p4.desc':
       'An open-source friendly repository that teaches first pull request workflows through contributor onboarding, templates, automation, and beginner-friendly repository operations.',
     'projects.p5.title': 'Lingog',
+    'projects.p5.eyebrow': 'Product Build',
     'projects.p5.desc':
       'A Dart-based word puzzle game inspired by Wordle, designed around timed gameplay, progressive difficulty, and product-oriented application structure.',
     'projects.liveDemo': 'Open Repo',
@@ -145,7 +144,6 @@ const I18N = {
   },
   tr: {
     'nav.about': 'Hakkımda',
-    'nav.skills': 'Yetenekler',
     'nav.projects': 'Projeler',
     'nav.experience': 'Deneyim',
     'nav.contact': 'İletişim',
@@ -184,11 +182,6 @@ const I18N = {
     'about.interest3': 'Otomasyon platformlari ve gelistirici araclari',
     'about.interest4': 'Gozlemlenebilirlik, guvenilirlik ve operasyonlar',
     'about.interest5': 'Guvenlik farkindaligi olan sistem tasarimi',
-    'section.skills': 'Yetenekler ve Teknolojiler',
-    'skills.cat1': 'Diller',
-    'skills.cat2': 'Framework ve Sistemler',
-    'skills.cat3': 'Araçlar ve Platformlar',
-    'skills.cat4': 'Guvenilirlik ve Guvenlik',
     'section.projects': 'Secili Projeler',
     'about.capabilitiesTitle': 'Secili Yetenekler',
     'about.capability1': 'Go, Python, TypeScript',
@@ -197,18 +190,23 @@ const I18N = {
     'about.capability4': 'PostgreSQL, Redis, CI/CD',
     'about.capability5': 'Guvenlik, gozlemlenebilirlik, RBAC',
     'projects.p1.title': 'industrial-rag-engine',
+    'projects.p1.eyebrow': 'AI Sistemleri',
     'projects.p1.desc':
       'AI uygulamalari icin yapilandirilmis bilgi retrieval, FastAPI servisleme ve olceklenebilir temiz mimari sunan moduler bir Retrieval-Augmented Generation sistemi. Retrieval kalitesi, tipli contract’lar ve daha guvenli cevap temellendirmesi etrafinda tasarlanmistir.',
     'projects.p2.title': 'Backend-Path',
+    'projects.p2.eyebrow': 'Backend Mimarisi',
     'projects.p2.desc':
       'Katmanli servis tasarimi, authentication, RBAC, PostgreSQL, Redis ve CI odakli gelistirme yaklasimiyla uretim odakli bir Go backend mimarisi calismasi.',
     'projects.p3.title': 'Tool_Flower',
+    'projects.p3.eyebrow': 'Otomasyon Platformu',
     'projects.p3.desc':
       'Operasyonel araclari lokal veya SSH uzerinden calistiran guvenli bir otomasyon kontrol duzlemi. Politika uygulama, auditability, observability ve daha guvenli execution akislari uzerine kuruludur.',
     'projects.p4.title': 'first-contribution-playground',
+    'projects.p4.eyebrow': 'Open Source',
     'projects.p4.desc':
       'Ilk pull request surecini ogreten; contributor onboarding, sablonlar, otomasyon ve baslangic dostu repo operasyonlari sunan open-source odakli bir repository.',
     'projects.p5.title': 'Lingog',
+    'projects.p5.eyebrow': 'Urun Yapimi',
     'projects.p5.desc':
       'Wordle esintili, zaman baskisi ve artan zorluk seviyeleriyle tasarlanmis Dart tabanli bir kelime bulmaca oyunu; urun odakli uygulama yapisini gosterir.',
     'projects.liveDemo': 'Repoyu Ac',
