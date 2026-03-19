@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Abdullah OzToprak portfolio preview">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Abdullah Oztoprak portfolio preview">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0a0a0f" />
@@ -13,12 +13,12 @@
   <circle cx="980" cy="120" r="180" fill="#1c1c26" opacity="0.45" />
   <circle cx="170" cy="560" r="220" fill="#1c1c26" opacity="0.35" />
 
-  <text x="110" y="220" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="34">Software Developer</text>
-  <text x="110" y="268" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="34">&amp; Test Automation Engineer</text>
+  <text x="110" y="220" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="34">AI Systems</text>
+  <text x="110" y="268" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="34">Backend Architecture • Automation</text>
 
-  <text x="110" y="360" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="800">Abdullah OzToprak</text>
-  <text x="110" y="430" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="36">Building reliable and scalable web software</text>
-  <text x="110" y="480" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="36">with practical quality automation.</text>
+  <text x="110" y="360" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="800">Abdullah Oztoprak</text>
+  <text x="110" y="430" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="36">Reliable systems, security-aware architecture,</text>
+  <text x="110" y="480" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="36">and real-world engineering workflows.</text>
 
   <rect x="110" y="525" width="380" height="10" rx="5" fill="url(#accent)" />
 </svg>

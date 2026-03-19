@@ -1,7 +1,7 @@
 {
   "name": "portfolio-site",
   "version": "2.0.0",
-  "description": "Abdullah ÖzToprak — Personal portfolio website with Node.js Express backend and Playwright E2E tests.",
+  "description": "Abdullah Öztoprak — Portfolio website focused on AI systems, backend architecture, and automation platforms.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,7 +11,7 @@
     "test:ui": "npx playwright test --ui"
   },
   "keywords": ["portfolio", "express", "playwright", "testing"],
-  "author": "Abdullah ÖzToprak",
+  "author": "Abdullah Öztoprak",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2"
