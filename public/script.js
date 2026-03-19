@@ -69,31 +69,39 @@ const I18N = {
     'projects.liveDemo': 'Open Repo',
     'projects.sourceCode': 'GitHub Profile',
     'section.experience': 'Experience',
-    'experience.role1': 'Software Engineering Intern',
-    'experience.company1': 'Insider',
+    'experience.role1': 'Computer Engineering Tutor',
+    'experience.company1': 'Turkish-German University · Part-time · On-site',
     'experience.role1.b1':
-      'Worked on production-oriented Go backend tasks with data-driven engineering and team delivery workflows.',
+      'Selected by the faculty to support undergraduate students in core computer science courses.',
     'experience.role1.b2':
-      'Strengthened backend architecture thinking around service boundaries, API behavior, and maintainability.',
+      'Provided academic support to 40+ students in Algorithms and Data Structures.',
     'experience.role1.b3':
-      'Collaborated in a real engineering environment with practical ownership and delivery expectations.',
+      'Created structured explanations, practical examples, and targeted study materials.',
     'experience.role1.b4':
-      'Applied reliability-minded development habits to code quality, iteration speed, and implementation discipline.',
-    'experience.role2': 'DevOps / Security Intern',
-    'experience.company2': 'Siemens',
-    'experience.role2.b1': 'Worked on CI/CD, Linux hardening, SSH security, and automation workflows in an infrastructure-aware environment.',
+      'Helped students improve algorithmic thinking, debugging, and problem-solving confidence.',
+    'experience.role2': 'AI & Software Development Intern',
+    'experience.company2': 'Insider · Internship · On-site',
+    'experience.role2.b1': 'Contributed to AI-driven backend architectures and scalable financial systems.',
     'experience.role2.b2':
-      'Built hands-on experience around operational safety, system access patterns, and secure engineering practices.',
+      'Collaborated on Large Language Model integration for intelligent product features.',
     'experience.role2.b3':
-      'Improved practical understanding of reliability, security boundaries, and disciplined deployment workflows.',
-    'experience.role3': 'Computer Engineering Student',
-    'experience.company3': 'Current Focus',
+      'Designed automation workflows that reduced manual effort and improved system reliability.',
+    'experience.role3': 'Cyber Security Intern',
+    'experience.company3': 'Siemens · Internship · On-site',
     'experience.role3.b1':
-      'Building AI systems, backend services, and automation tooling with production-minded engineering habits.',
+      'Strengthened Linux-based environments through security hardening and vulnerability-focused thinking.',
     'experience.role3.b2':
-      'Focusing on observability, security-aware design, and maintainable architecture instead of prototype-only work.',
+      'Designed Jenkins-supported CI/CD automation to reduce deployment friction and manual error.',
     'experience.role3.b3':
-      'Exploring stronger evaluation, monitoring, and trust signals for AI-assisted systems.',
+      'Gained hands-on exposure to virtualization, secure networking, and operational security workflows.',
+    'experience.role4': "Bachelor's Degree, Computer Engineering",
+    'experience.company4': 'Turkish-German University',
+    'experience.role4.b1':
+      'Focused on software architecture, artificial intelligence, and system automation.',
+    'experience.role4.b2':
+      'Active in the Computer Engineering Society, AI & Data Science Community, and peer tutoring programs.',
+    'experience.role4.b3':
+      'Bridged theory and practice through scalable backend systems, AI-driven tools, and agile project collaboration.',
     'section.principles': 'Engineering Principles',
     'principles.p1.title': 'Reliability by Design',
     'principles.p1.text':
@@ -118,6 +126,17 @@ const I18N = {
     'focus.item2': 'Scalable retrieval, serving, and monitoring pipelines',
     'focus.item3': 'Developer automation tools for safer operational workflows',
     'focus.item4': 'System design that balances observability, security, and maintainability',
+    'section.certifications': 'Licenses & Certifications',
+    'certs.c1.issuer': 'T.C. Ministry of Industry and Technology',
+    'certs.c1.title': 'Milli Teknoloji Akademisi Artificial Intelligence Fundamentals Certificate',
+    'certs.c1.meta': 'Issued Mar 2026 · Credential ID 21531656125201',
+    'certs.c1.text':
+      'Foundational certification focused on artificial intelligence concepts and applied learning fundamentals.',
+    'certs.c2.issuer': 'Cisco Networking Academy',
+    'certs.c2.title': 'Network Technician Career Path Certificate',
+    'certs.c2.meta': 'Issued Aug 2025',
+    'certs.c2.text':
+      'Certification covering networking foundations, architecture awareness, and practical infrastructure knowledge.',
     'section.contact': 'Get In Touch',
     'contact.intro':
       "I'm always open to new opportunities, collaborations, or just a friendly conversation. Feel free to reach out. I usually respond within 24 hours.",
@@ -207,31 +226,39 @@ const I18N = {
     'projects.liveDemo': 'Repoyu Ac',
     'projects.sourceCode': 'GitHub Profili',
     'section.experience': 'Deneyim',
-    'experience.role1': 'Yazilim Muhendisligi Stajyeri',
-    'experience.company1': 'Insider',
+    'experience.role1': 'Bilgisayar Muhendisligi Tutor',
+    'experience.company1': 'Turk-Alman Universitesi · Part-time · On-site',
     'experience.role1.b1':
-      'Uretim odakli Go backend gorevleri, veri odakli muhendislik isleri ve ekip teslimati akislari uzerinde calistim.',
+      'Fakulte tarafindan temel bilgisayar bilimi derslerinde lisans ogrencilerine destek vermek uzere secildim.',
     'experience.role1.b2':
-      'Servis sinirlari, API davranisi ve bakim kolayligi etrafinda backend mimarisi dusuncesini guclendirdim.',
+      'Algoritmalar ve Veri Yapilari derslerinde 40+ ogrenciye akademik destek sagladim.',
     'experience.role1.b3':
-      'Gercek bir muhendislik ortaminda sahiplik ve teslimat beklentileriyle ekip icinde calistim.',
+      'Yapilandirilmis anlatimlar, pratik ornekler ve hedefli calisma materyalleri gelistirdim.',
     'experience.role1.b4':
-      'Kod kalitesi, iterasyon hizi ve uygulama disiplini icin guvenilirlik odakli gelistirme aliskanliklari kazandim.',
-    'experience.role2': 'DevOps / Guvenlik Stajyeri',
-    'experience.company2': 'Siemens',
-    'experience.role2.b1': 'CI/CD, Linux hardening, SSH security ve otomasyon is akislariyla altyapi farkindaligi olan bir ortamda calistim.',
+      'Ogrencilerin algoritmik dusunme, debugging ve problem cozme guvenini guclendirdim.',
+    'experience.role2': 'AI & Yazilim Gelistirme Stajyeri',
+    'experience.company2': 'Insider · Internship · On-site',
+    'experience.role2.b1': 'AI odakli backend mimarileri ve olceklenebilir finansal sistemlerin gelistirilmesine katkida bulundum.',
     'experience.role2.b2':
-      'Operasyonel guvenlik, sistem erisim kaliplari ve secure engineering pratikleri konusunda uygulamali deneyim kazandim.',
+      'Akilli urun ozellikleri icin Large Language Model entegrasyonu uzerine calistim.',
     'experience.role2.b3':
-      'Guvenilirlik, guven sinirlari ve disiplinli deployment is akislari hakkinda pratik anlayisimi derinlestirdim.',
-    'experience.role3': 'Bilgisayar Muhendisligi Ogrencisi',
-    'experience.company3': 'Guncel Odak',
+      'Manuel eforu azaltan ve sistem guvenilirligini artiran otomasyon akislari tasarladim.',
+    'experience.role3': 'Cyber Security Stajyeri',
+    'experience.company3': 'Siemens · Internship · On-site',
     'experience.role3.b1':
-      'AI sistemleri, backend servisleri ve otomasyon araclarini uretim zihniyetine yakin muhendislik aliskanliklariyla gelistiriyorum.',
+      'Linux tabanli ortamlari guvenlik sertlestirmesi ve zafiyet odakli dusunceyle guclendirdim.',
     'experience.role3.b2':
-      'Prototip odakli degil; gozlemlenebilirlik, guvenlik farkindaligi ve bakimi kolay mimari uzerine yogunlasiyorum.',
+      'Deployment surtunmesini ve manuel hatayi azaltmak icin Jenkins destekli CI/CD otomasyonu tasarladim.',
     'experience.role3.b3':
-      'AI destekli sistemlerde daha guclu evaluation, monitoring ve trust signal yaklasimlarini kesfediyorum.',
+      'Virtualization, guvenli ag mimarisi ve operasyonel guvenlik is akislari konusunda uygulamali deneyim kazandim.',
+    'experience.role4': 'Lisans, Bilgisayar Muhendisligi',
+    'experience.company4': 'Turk-Alman Universitesi',
+    'experience.role4.b1':
+      'Yazilim mimarisi, yapay zeka ve sistem otomasyonu uzerine guclu bir akademik odak gelistirdim.',
+    'experience.role4.b2':
+      'Bilgisayar Muhendisligi Toplulugu, AI & Data Science Community ve peer tutoring programlarinda aktif rol aldim.',
+    'experience.role4.b3':
+      'Olceklenebilir backend sistemleri, AI araclari ve agile proje is birlikleriyle teori-pratik koprusunu kurdum.',
     'section.principles': 'Muhendislik Prensipleri',
     'principles.p1.title': 'Tasarlanmis Guvenilirlik',
     'principles.p1.text':
@@ -256,6 +283,17 @@ const I18N = {
     'focus.item2': 'Olceklenebilir retrieval, serving ve monitoring pipeline tasarimlari',
     'focus.item3': 'Daha guvenli operasyonel is akislari icin gelistirici otomasyon araclari',
     'focus.item4': 'Gozlemlenebilirlik, guvenlik ve bakim kolayligi dengesini kuran sistem tasarimi',
+    'section.certifications': 'Lisanslar ve Sertifikalar',
+    'certs.c1.issuer': 'T.C. Sanayi ve Teknoloji Bakanligi',
+    'certs.c1.title': 'Milli Teknoloji Akademisi Yapay Zeka Temel Egitim Sertifikasi',
+    'certs.c1.meta': 'Verilis: Mart 2026 · Belge ID 21531656125201',
+    'certs.c1.text':
+      'Yapay zeka kavramlari ve uygulamali ogrenme temellerine odaklanan temel seviye sertifika.',
+    'certs.c2.issuer': 'Cisco Networking Academy',
+    'certs.c2.title': 'Network Technician Career Path Certificate',
+    'certs.c2.meta': 'Verilis: Agustos 2025',
+    'certs.c2.text':
+      'Ag temelleri, mimari farkindalik ve pratik altyapi bilgisi kapsayan sertifikasyon.',
     'section.contact': 'İletişim',
     'contact.intro':
       'Yeni fırsatlara, iş birliklerine ve tanışmaya her zaman açığım. Bana ulaşabilirsin, genelde 24 saat içinde dönüş yapıyorum.',
